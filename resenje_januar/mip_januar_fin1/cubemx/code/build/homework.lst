@@ -1,0 +1,968 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"homework.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	__aeabi_fcmplt
+  16              		.section	.text.led_dioda,"ax",%progbits
+  17              		.align	1
+  18              		.global	led_dioda
+  19              		.arch armv7-m
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu softvfp
+  25              	led_dioda:
+  26              	.LVL0:
+  27              	.LFB70:
+  28              		.file 1 "../Core/Src/homework.c"
+   1:../Core/Src/homework.c **** 
+  29              		.loc 1 107 34 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 107 34 is_stmt 0 view .LVU1
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  39              		.loc 1 108 2 is_stmt 1 view .LVU2
+  40              		.loc 1 108 17 is_stmt 0 view .LVU3
+  41 0002 094B     		ldr	r3, .L8
+  42 0004 1868     		ldr	r0, [r3]	@ float
+  43              	.LVL1:
+  44              		.loc 1 108 4 view .LVU4
+  45 0006 0949     		ldr	r1, .L8+4
+  46 0008 094B     		ldr	r3, .L8+8
+  47 000a 9847     		blx	r3
+  48              	.LVL2:
+  49 000c 30B1     		cbz	r0, .L6
+  50              		.loc 1 109 3 is_stmt 1 view .LVU5
+  51 000e 0022     		movs	r2, #0
+  52 0010 4FF40051 		mov	r1, #8192
+  53 0014 0748     		ldr	r0, .L8+12
+  54 0016 084B     		ldr	r3, .L8+16
+  55 0018 9847     		blx	r3
+  56              	.LVL3:
+  57              	.L1:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 2
+
+
+  58              		.loc 1 113 1 is_stmt 0 view .LVU6
+  59 001a 08BD     		pop	{r3, pc}
+  60              	.L6:
+  61              		.loc 1 111 3 is_stmt 1 view .LVU7
+  62 001c 4FF40051 		mov	r1, #8192
+  63 0020 0448     		ldr	r0, .L8+12
+  64 0022 064B     		ldr	r3, .L8+20
+  65 0024 9847     		blx	r3
+  66              	.LVL4:
+  67              		.loc 1 113 1 is_stmt 0 view .LVU8
+  68 0026 F8E7     		b	.L1
+  69              	.L9:
+  70              		.align	2
+  71              	.L8:
+  72 0028 00000000 		.word	brzinaSensor
+  73 002c 00004842 		.word	1112014848
+  74 0030 00000000 		.word	__aeabi_fcmplt
+  75 0034 00080140 		.word	1073809408
+  76 0038 00000000 		.word	HAL_GPIO_WritePin
+  77 003c 00000000 		.word	HAL_GPIO_TogglePin
+  78              		.cfi_endproc
+  79              	.LFE70:
+  81              		.global	__aeabi_f2iz
+  82              		.section	.rodata.homeworkTask.str1.4,"aMS",%progbits,1
+  83              		.align	2
+  84              	.LC0:
+  85 0000 54656D70 		.ascii	"Temper: \000"
+  85      65723A20 
+  85      00
+  86 0009 000000   		.align	2
+  87              	.LC1:
+  88 000c 417A696D 		.ascii	"Azimut: \000"
+  88      75743A20 
+  88      00
+  89 0015 000000   		.align	2
+  90              	.LC2:
+  91 0018 42727A69 		.ascii	"Brzina: \000"
+  91      6E613A20 
+  91      00
+  92              		.section	.text.homeworkTask,"ax",%progbits
+  93              		.align	1
+  94              		.syntax unified
+  95              		.thumb
+  96              		.thumb_func
+  97              		.fpu softvfp
+  99              	homeworkTask:
+ 100              	.LVL5:
+ 101              	.LFB69:
+ 102              		.loc 1 31 1 is_stmt 1 view -0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 24
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              		.loc 1 31 1 is_stmt 0 view .LVU10
+ 107 0000 30B5     		push	{r4, r5, lr}
+ 108              	.LCFI1:
+ 109              		.cfi_def_cfa_offset 12
+ 110              		.cfi_offset 4, -12
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 3
+
+
+ 111              		.cfi_offset 5, -8
+ 112              		.cfi_offset 14, -4
+ 113 0002 87B0     		sub	sp, sp, #28
+ 114              	.LCFI2:
+ 115              		.cfi_def_cfa_offset 40
+ 116              		.loc 1 32 2 is_stmt 1 view .LVU11
+ 117              		.loc 1 32 7 is_stmt 0 view .LVU12
+ 118 0004 874B     		ldr	r3, .L50
+ 119 0006 93E80300 		ldm	r3, {r0, r1}
+ 120              	.LVL6:
+ 121              		.loc 1 32 7 view .LVU13
+ 122 000a 06AB     		add	r3, sp, #24
+ 123 000c 03E90300 		stmdb	r3, {r0, r1}
+ 124              		.loc 1 33 2 is_stmt 1 view .LVU14
+ 125              		.loc 1 33 7 is_stmt 0 view .LVU15
+ 126 0010 854A     		ldr	r2, .L50+4
+ 127 0012 02AB     		add	r3, sp, #8
+ 128 0014 92E80300 		ldm	r2, {r0, r1}
+ 129 0018 83E80300 		stm	r3, {r0, r1}
+ 130              		.loc 1 34 2 is_stmt 1 view .LVU16
+ 131              		.loc 1 34 7 is_stmt 0 view .LVU17
+ 132 001c 834A     		ldr	r2, .L50+8
+ 133 001e 6B46     		mov	r3, sp
+ 134 0020 92E80300 		ldm	r2, {r0, r1}
+ 135 0024 83E80300 		stm	r3, {r0, r1}
+ 136              		.loc 1 35 2 is_stmt 1 view .LVU18
+ 137 0028 9021     		movs	r1, #144
+ 138 002a 0020     		movs	r0, #0
+ 139 002c 804B     		ldr	r3, .L50+12
+ 140 002e 9847     		blx	r3
+ 141              	.LVL7:
+ 142              		.loc 1 36 2 view .LVU19
+ 143              	.LBB2:
+ 144              		.loc 1 36 6 view .LVU20
+ 145              		.loc 1 36 10 is_stmt 0 view .LVU21
+ 146 0030 0024     		movs	r4, #0
+ 147              		.loc 1 36 2 view .LVU22
+ 148 0032 07E0     		b	.L11
+ 149              	.LVL8:
+ 150              	.L12:
+ 151              		.loc 1 37 3 is_stmt 1 discriminator 3 view .LVU23
+ 152              		.loc 1 37 43 is_stmt 0 discriminator 3 view .LVU24
+ 153 0034 06AB     		add	r3, sp, #24
+ 154 0036 2344     		add	r3, r3, r4
+ 155              		.loc 1 37 3 discriminator 3 view .LVU25
+ 156 0038 13F8081C 		ldrb	r1, [r3, #-8]	@ zero_extendqisi2
+ 157 003c 0120     		movs	r0, #1
+ 158 003e 7C4B     		ldr	r3, .L50+12
+ 159 0040 9847     		blx	r3
+ 160              	.LVL9:
+ 161              		.loc 1 36 18 is_stmt 1 discriminator 3 view .LVU26
+ 162              		.loc 1 36 19 is_stmt 0 discriminator 3 view .LVU27
+ 163 0042 0134     		adds	r4, r4, #1
+ 164              	.LVL10:
+ 165              	.L11:
+ 166              		.loc 1 36 14 is_stmt 1 discriminator 1 view .LVU28
+ 167              		.loc 1 36 2 is_stmt 0 discriminator 1 view .LVU29
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 4
+
+
+ 168 0044 072C     		cmp	r4, #7
+ 169 0046 F5DD     		ble	.L12
+ 170              	.LBE2:
+ 171              		.loc 1 39 2 is_stmt 1 view .LVU30
+ 172 0048 8021     		movs	r1, #128
+ 173 004a 0020     		movs	r0, #0
+ 174 004c 784B     		ldr	r3, .L50+12
+ 175 004e 9847     		blx	r3
+ 176              	.LVL11:
+ 177              		.loc 1 40 2 view .LVU31
+ 178              	.LBB3:
+ 179              		.loc 1 40 6 view .LVU32
+ 180              		.loc 1 40 10 is_stmt 0 view .LVU33
+ 181 0050 0024     		movs	r4, #0
+ 182              	.LVL12:
+ 183              		.loc 1 40 2 view .LVU34
+ 184 0052 07E0     		b	.L13
+ 185              	.LVL13:
+ 186              	.L14:
+ 187              		.loc 1 41 3 is_stmt 1 discriminator 3 view .LVU35
+ 188              		.loc 1 41 43 is_stmt 0 discriminator 3 view .LVU36
+ 189 0054 06AB     		add	r3, sp, #24
+ 190 0056 2344     		add	r3, r3, r4
+ 191              		.loc 1 41 3 discriminator 3 view .LVU37
+ 192 0058 13F8101C 		ldrb	r1, [r3, #-16]	@ zero_extendqisi2
+ 193 005c 0120     		movs	r0, #1
+ 194 005e 744B     		ldr	r3, .L50+12
+ 195 0060 9847     		blx	r3
+ 196              	.LVL14:
+ 197              		.loc 1 40 18 is_stmt 1 discriminator 3 view .LVU38
+ 198              		.loc 1 40 19 is_stmt 0 discriminator 3 view .LVU39
+ 199 0062 0134     		adds	r4, r4, #1
+ 200              	.LVL15:
+ 201              	.L13:
+ 202              		.loc 1 40 14 is_stmt 1 discriminator 1 view .LVU40
+ 203              		.loc 1 40 2 is_stmt 0 discriminator 1 view .LVU41
+ 204 0064 072C     		cmp	r4, #7
+ 205 0066 F5DD     		ble	.L14
+ 206              	.LBE3:
+ 207              		.loc 1 43 2 is_stmt 1 view .LVU42
+ 208 0068 C021     		movs	r1, #192
+ 209 006a 0020     		movs	r0, #0
+ 210 006c 704B     		ldr	r3, .L50+12
+ 211 006e 9847     		blx	r3
+ 212              	.LVL16:
+ 213              		.loc 1 44 2 view .LVU43
+ 214              	.LBB4:
+ 215              		.loc 1 44 6 view .LVU44
+ 216              		.loc 1 44 10 is_stmt 0 view .LVU45
+ 217 0070 0024     		movs	r4, #0
+ 218              	.LVL17:
+ 219              		.loc 1 44 2 view .LVU46
+ 220 0072 07E0     		b	.L15
+ 221              	.LVL18:
+ 222              	.L16:
+ 223              		.loc 1 45 3 is_stmt 1 discriminator 3 view .LVU47
+ 224              		.loc 1 45 45 is_stmt 0 discriminator 3 view .LVU48
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 5
+
+
+ 225 0074 06AB     		add	r3, sp, #24
+ 226 0076 2344     		add	r3, r3, r4
+ 227              		.loc 1 45 3 discriminator 3 view .LVU49
+ 228 0078 13F8181C 		ldrb	r1, [r3, #-24]	@ zero_extendqisi2
+ 229 007c 0120     		movs	r0, #1
+ 230 007e 6C4B     		ldr	r3, .L50+12
+ 231 0080 9847     		blx	r3
+ 232              	.LVL19:
+ 233              		.loc 1 44 18 is_stmt 1 discriminator 3 view .LVU50
+ 234              		.loc 1 44 19 is_stmt 0 discriminator 3 view .LVU51
+ 235 0082 0134     		adds	r4, r4, #1
+ 236              	.LVL20:
+ 237              	.L15:
+ 238              		.loc 1 44 14 is_stmt 1 discriminator 1 view .LVU52
+ 239              		.loc 1 44 2 is_stmt 0 discriminator 1 view .LVU53
+ 240 0084 072C     		cmp	r4, #7
+ 241 0086 F5DD     		ble	.L16
+ 242 0088 A0E0     		b	.L41
+ 243              	.LVL21:
+ 244              	.L49:
+ 245              		.loc 1 44 2 discriminator 1 view .LVU54
+ 246              	.LBE4:
+ 247              		.loc 1 57 3 is_stmt 1 view .LVU55
+ 248 008a 8821     		movs	r1, #136
+ 249 008c 0020     		movs	r0, #0
+ 250 008e 684B     		ldr	r3, .L50+12
+ 251 0090 9847     		blx	r3
+ 252              	.LVL22:
+ 253              		.loc 1 58 3 view .LVU56
+ 254              	.LBB5:
+ 255              		.loc 1 58 7 view .LVU57
+ 256              		.loc 1 58 11 is_stmt 0 view .LVU58
+ 257 0092 0024     		movs	r4, #0
+ 258              	.LVL23:
+ 259              	.L19:
+ 260              		.loc 1 58 15 is_stmt 1 discriminator 1 view .LVU59
+ 261              		.loc 1 58 17 is_stmt 0 discriminator 1 view .LVU60
+ 262 0094 6748     		ldr	r0, .L50+16
+ 263 0096 684B     		ldr	r3, .L50+20
+ 264 0098 9847     		blx	r3
+ 265              	.LVL24:
+ 266              		.loc 1 58 3 discriminator 1 view .LVU61
+ 267 009a A042     		cmp	r0, r4
+ 268 009c 06D9     		bls	.L43
+ 269              		.loc 1 59 4 is_stmt 1 discriminator 3 view .LVU62
+ 270 009e 654B     		ldr	r3, .L50+16
+ 271 00a0 195D     		ldrb	r1, [r3, r4]	@ zero_extendqisi2
+ 272 00a2 0120     		movs	r0, #1
+ 273 00a4 624B     		ldr	r3, .L50+12
+ 274 00a6 9847     		blx	r3
+ 275              	.LVL25:
+ 276              		.loc 1 58 38 discriminator 3 view .LVU63
+ 277              		.loc 1 58 39 is_stmt 0 discriminator 3 view .LVU64
+ 278 00a8 0134     		adds	r4, r4, #1
+ 279              	.LVL26:
+ 280              		.loc 1 58 39 discriminator 3 view .LVU65
+ 281 00aa F3E7     		b	.L19
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 6
+
+
+ 282              	.L43:
+ 283              		.loc 1 58 39 discriminator 3 view .LVU66
+ 284              	.LBE5:
+ 285              		.loc 1 61 3 is_stmt 1 view .LVU67
+ 286 00ac C821     		movs	r1, #200
+ 287 00ae 0020     		movs	r0, #0
+ 288 00b0 5F4B     		ldr	r3, .L50+12
+ 289 00b2 9847     		blx	r3
+ 290              	.LVL27:
+ 291              		.loc 1 62 3 view .LVU68
+ 292              	.LBB6:
+ 293              		.loc 1 62 7 view .LVU69
+ 294              		.loc 1 62 11 is_stmt 0 view .LVU70
+ 295 00b4 0024     		movs	r4, #0
+ 296              	.LVL28:
+ 297              	.L21:
+ 298              		.loc 1 62 15 is_stmt 1 discriminator 1 view .LVU71
+ 299              		.loc 1 62 17 is_stmt 0 discriminator 1 view .LVU72
+ 300 00b6 6148     		ldr	r0, .L50+24
+ 301 00b8 5F4B     		ldr	r3, .L50+20
+ 302 00ba 9847     		blx	r3
+ 303              	.LVL29:
+ 304              		.loc 1 62 3 discriminator 1 view .LVU73
+ 305 00bc A042     		cmp	r0, r4
+ 306 00be 06D9     		bls	.L44
+ 307              		.loc 1 63 4 is_stmt 1 discriminator 3 view .LVU74
+ 308 00c0 5E4B     		ldr	r3, .L50+24
+ 309 00c2 195D     		ldrb	r1, [r3, r4]	@ zero_extendqisi2
+ 310 00c4 0120     		movs	r0, #1
+ 311 00c6 5A4B     		ldr	r3, .L50+12
+ 312 00c8 9847     		blx	r3
+ 313              	.LVL30:
+ 314              		.loc 1 62 36 discriminator 3 view .LVU75
+ 315              		.loc 1 62 37 is_stmt 0 discriminator 3 view .LVU76
+ 316 00ca 0134     		adds	r4, r4, #1
+ 317              	.LVL31:
+ 318              		.loc 1 62 37 discriminator 3 view .LVU77
+ 319 00cc F3E7     		b	.L21
+ 320              	.L44:
+ 321              		.loc 1 62 37 discriminator 3 view .LVU78
+ 322              	.LBE6:
+ 323              	.LBB7:
+ 324              		.loc 1 66 11 view .LVU79
+ 325 00ce 0024     		movs	r4, #0
+ 326              	.LVL32:
+ 327              	.L23:
+ 328              		.loc 1 66 15 is_stmt 1 discriminator 1 view .LVU80
+ 329              		.loc 1 66 17 is_stmt 0 discriminator 1 view .LVU81
+ 330 00d0 5848     		ldr	r0, .L50+16
+ 331 00d2 594B     		ldr	r3, .L50+20
+ 332 00d4 9847     		blx	r3
+ 333              	.LVL33:
+ 334              		.loc 1 66 3 discriminator 1 view .LVU82
+ 335 00d6 A042     		cmp	r0, r4
+ 336 00d8 05D9     		bls	.L45
+ 337              		.loc 1 67 4 is_stmt 1 discriminator 3 view .LVU83
+ 338 00da 564B     		ldr	r3, .L50+16
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 7
+
+
+ 339 00dc 185D     		ldrb	r0, [r3, r4]	@ zero_extendqisi2
+ 340 00de 584B     		ldr	r3, .L50+28
+ 341 00e0 9847     		blx	r3
+ 342              	.LVL34:
+ 343              		.loc 1 66 38 discriminator 3 view .LVU84
+ 344              		.loc 1 66 39 is_stmt 0 discriminator 3 view .LVU85
+ 345 00e2 0134     		adds	r4, r4, #1
+ 346              	.LVL35:
+ 347              		.loc 1 66 39 discriminator 3 view .LVU86
+ 348 00e4 F4E7     		b	.L23
+ 349              	.L45:
+ 350              		.loc 1 66 39 discriminator 3 view .LVU87
+ 351              	.LBE7:
+ 352              		.loc 1 69 3 is_stmt 1 view .LVU88
+ 353 00e6 2F20     		movs	r0, #47
+ 354 00e8 554B     		ldr	r3, .L50+28
+ 355 00ea 9847     		blx	r3
+ 356              	.LVL36:
+ 357              		.loc 1 70 3 view .LVU89
+ 358              	.LBB8:
+ 359              		.loc 1 70 7 view .LVU90
+ 360              		.loc 1 70 11 is_stmt 0 view .LVU91
+ 361 00ec 0024     		movs	r4, #0
+ 362              	.LVL37:
+ 363              	.L25:
+ 364              		.loc 1 70 15 is_stmt 1 discriminator 1 view .LVU92
+ 365              		.loc 1 70 17 is_stmt 0 discriminator 1 view .LVU93
+ 366 00ee 5348     		ldr	r0, .L50+24
+ 367 00f0 514B     		ldr	r3, .L50+20
+ 368 00f2 9847     		blx	r3
+ 369              	.LVL38:
+ 370              		.loc 1 70 3 discriminator 1 view .LVU94
+ 371 00f4 A042     		cmp	r0, r4
+ 372 00f6 05D9     		bls	.L46
+ 373              		.loc 1 71 4 is_stmt 1 discriminator 3 view .LVU95
+ 374 00f8 504B     		ldr	r3, .L50+24
+ 375 00fa 185D     		ldrb	r0, [r3, r4]	@ zero_extendqisi2
+ 376 00fc 504B     		ldr	r3, .L50+28
+ 377 00fe 9847     		blx	r3
+ 378              	.LVL39:
+ 379              		.loc 1 70 36 discriminator 3 view .LVU96
+ 380              		.loc 1 70 37 is_stmt 0 discriminator 3 view .LVU97
+ 381 0100 0134     		adds	r4, r4, #1
+ 382              	.LVL40:
+ 383              		.loc 1 70 37 discriminator 3 view .LVU98
+ 384 0102 F4E7     		b	.L25
+ 385              	.L46:
+ 386              		.loc 1 70 37 discriminator 3 view .LVU99
+ 387              	.LBE8:
+ 388              		.loc 1 73 3 is_stmt 1 view .LVU100
+ 389 0104 2F20     		movs	r0, #47
+ 390 0106 4E4B     		ldr	r3, .L50+28
+ 391 0108 9847     		blx	r3
+ 392              	.LVL41:
+ 393              		.loc 1 74 3 view .LVU101
+ 394              	.LBB9:
+ 395              		.loc 1 74 7 view .LVU102
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 8
+
+
+ 396              		.loc 1 74 11 is_stmt 0 view .LVU103
+ 397 010a 0024     		movs	r4, #0
+ 398              	.LVL42:
+ 399              	.L27:
+ 400              		.loc 1 74 15 is_stmt 1 discriminator 1 view .LVU104
+ 401              		.loc 1 74 17 is_stmt 0 discriminator 1 view .LVU105
+ 402 010c 4D48     		ldr	r0, .L50+32
+ 403 010e 4A4B     		ldr	r3, .L50+20
+ 404 0110 9847     		blx	r3
+ 405              	.LVL43:
+ 406              		.loc 1 74 3 discriminator 1 view .LVU106
+ 407 0112 A042     		cmp	r0, r4
+ 408 0114 05D9     		bls	.L47
+ 409              		.loc 1 75 4 is_stmt 1 discriminator 3 view .LVU107
+ 410 0116 4B4B     		ldr	r3, .L50+32
+ 411 0118 185D     		ldrb	r0, [r3, r4]	@ zero_extendqisi2
+ 412 011a 494B     		ldr	r3, .L50+28
+ 413 011c 9847     		blx	r3
+ 414              	.LVL44:
+ 415              		.loc 1 74 34 discriminator 3 view .LVU108
+ 416              		.loc 1 74 35 is_stmt 0 discriminator 3 view .LVU109
+ 417 011e 0134     		adds	r4, r4, #1
+ 418              	.LVL45:
+ 419              		.loc 1 74 35 discriminator 3 view .LVU110
+ 420 0120 F4E7     		b	.L27
+ 421              	.L47:
+ 422              		.loc 1 74 35 discriminator 3 view .LVU111
+ 423              	.LBE9:
+ 424              		.loc 1 78 3 is_stmt 1 view .LVU112
+ 425 0122 C820     		movs	r0, #200
+ 426 0124 484B     		ldr	r3, .L50+36
+ 427 0126 9847     		blx	r3
+ 428              	.LVL46:
+ 429              		.loc 1 80 3 view .LVU113
+ 430 0128 9821     		movs	r1, #152
+ 431 012a 0020     		movs	r0, #0
+ 432 012c 404B     		ldr	r3, .L50+12
+ 433 012e 9847     		blx	r3
+ 434              	.LVL47:
+ 435              		.loc 1 81 3 view .LVU114
+ 436              	.LBB10:
+ 437              		.loc 1 81 7 view .LVU115
+ 438              		.loc 1 81 11 is_stmt 0 view .LVU116
+ 439 0130 0024     		movs	r4, #0
+ 440              	.LVL48:
+ 441              		.loc 1 81 3 view .LVU117
+ 442 0132 04E0     		b	.L29
+ 443              	.LVL49:
+ 444              	.L30:
+ 445              		.loc 1 82 4 is_stmt 1 discriminator 3 view .LVU118
+ 446 0134 2021     		movs	r1, #32
+ 447 0136 0120     		movs	r0, #1
+ 448 0138 3D4B     		ldr	r3, .L50+12
+ 449 013a 9847     		blx	r3
+ 450              	.LVL50:
+ 451              		.loc 1 81 34 discriminator 3 view .LVU119
+ 452              		.loc 1 81 35 is_stmt 0 discriminator 3 view .LVU120
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 9
+
+
+ 453 013c 0134     		adds	r4, r4, #1
+ 454              	.LVL51:
+ 455              	.L29:
+ 456              		.loc 1 81 15 is_stmt 1 discriminator 1 view .LVU121
+ 457              		.loc 1 81 17 is_stmt 0 discriminator 1 view .LVU122
+ 458 013e 4148     		ldr	r0, .L50+32
+ 459 0140 3D4B     		ldr	r3, .L50+20
+ 460 0142 9847     		blx	r3
+ 461              	.LVL52:
+ 462              		.loc 1 81 3 discriminator 1 view .LVU123
+ 463 0144 A042     		cmp	r0, r4
+ 464 0146 F5D8     		bhi	.L30
+ 465              	.LBE10:
+ 466              		.loc 1 84 3 is_stmt 1 view .LVU124
+ 467 0148 8821     		movs	r1, #136
+ 468 014a 0020     		movs	r0, #0
+ 469 014c 384B     		ldr	r3, .L50+12
+ 470 014e 9847     		blx	r3
+ 471              	.LVL53:
+ 472              		.loc 1 85 3 view .LVU125
+ 473              	.LBB11:
+ 474              		.loc 1 85 7 view .LVU126
+ 475              		.loc 1 85 11 is_stmt 0 view .LVU127
+ 476 0150 0024     		movs	r4, #0
+ 477              	.LVL54:
+ 478              		.loc 1 85 3 view .LVU128
+ 479 0152 04E0     		b	.L31
+ 480              	.LVL55:
+ 481              	.L32:
+ 482              		.loc 1 86 4 is_stmt 1 discriminator 3 view .LVU129
+ 483 0154 2021     		movs	r1, #32
+ 484 0156 0120     		movs	r0, #1
+ 485 0158 354B     		ldr	r3, .L50+12
+ 486 015a 9847     		blx	r3
+ 487              	.LVL56:
+ 488              		.loc 1 85 38 discriminator 3 view .LVU130
+ 489              		.loc 1 85 39 is_stmt 0 discriminator 3 view .LVU131
+ 490 015c 0134     		adds	r4, r4, #1
+ 491              	.LVL57:
+ 492              	.L31:
+ 493              		.loc 1 85 15 is_stmt 1 discriminator 1 view .LVU132
+ 494              		.loc 1 85 17 is_stmt 0 discriminator 1 view .LVU133
+ 495 015e 3548     		ldr	r0, .L50+16
+ 496 0160 354B     		ldr	r3, .L50+20
+ 497 0162 9847     		blx	r3
+ 498              	.LVL58:
+ 499              		.loc 1 85 3 discriminator 1 view .LVU134
+ 500 0164 A042     		cmp	r0, r4
+ 501 0166 F5D8     		bhi	.L32
+ 502              	.LBE11:
+ 503              		.loc 1 88 3 is_stmt 1 view .LVU135
+ 504 0168 C821     		movs	r1, #200
+ 505 016a 0020     		movs	r0, #0
+ 506 016c 304B     		ldr	r3, .L50+12
+ 507 016e 9847     		blx	r3
+ 508              	.LVL59:
+ 509              		.loc 1 89 3 view .LVU136
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 10
+
+
+ 510              	.LBB12:
+ 511              		.loc 1 89 7 view .LVU137
+ 512              		.loc 1 89 11 is_stmt 0 view .LVU138
+ 513 0170 0024     		movs	r4, #0
+ 514              	.LVL60:
+ 515              		.loc 1 89 3 view .LVU139
+ 516 0172 04E0     		b	.L33
+ 517              	.LVL61:
+ 518              	.L34:
+ 519              		.loc 1 90 4 is_stmt 1 discriminator 3 view .LVU140
+ 520 0174 2021     		movs	r1, #32
+ 521 0176 0120     		movs	r0, #1
+ 522 0178 2D4B     		ldr	r3, .L50+12
+ 523 017a 9847     		blx	r3
+ 524              	.LVL62:
+ 525              		.loc 1 89 36 discriminator 3 view .LVU141
+ 526              		.loc 1 89 37 is_stmt 0 discriminator 3 view .LVU142
+ 527 017c 0134     		adds	r4, r4, #1
+ 528              	.LVL63:
+ 529              	.L33:
+ 530              		.loc 1 89 15 is_stmt 1 discriminator 1 view .LVU143
+ 531              		.loc 1 89 17 is_stmt 0 discriminator 1 view .LVU144
+ 532 017e 2F48     		ldr	r0, .L50+24
+ 533 0180 2D4B     		ldr	r3, .L50+20
+ 534 0182 9847     		blx	r3
+ 535              	.LVL64:
+ 536              		.loc 1 89 3 discriminator 1 view .LVU145
+ 537 0184 A042     		cmp	r0, r4
+ 538 0186 F5D8     		bhi	.L34
+ 539              	.LBE12:
+ 540              	.LBB13:
+ 541              		.loc 1 93 11 view .LVU146
+ 542 0188 0024     		movs	r4, #0
+ 543              	.LVL65:
+ 544              		.loc 1 93 11 view .LVU147
+ 545 018a 03E0     		b	.L35
+ 546              	.LVL66:
+ 547              	.L36:
+ 548              		.loc 1 94 4 is_stmt 1 discriminator 3 view .LVU148
+ 549 018c 0820     		movs	r0, #8
+ 550 018e 2C4B     		ldr	r3, .L50+28
+ 551 0190 9847     		blx	r3
+ 552              	.LVL67:
+ 553              		.loc 1 93 38 discriminator 3 view .LVU149
+ 554              		.loc 1 93 39 is_stmt 0 discriminator 3 view .LVU150
+ 555 0192 0134     		adds	r4, r4, #1
+ 556              	.LVL68:
+ 557              	.L35:
+ 558              		.loc 1 93 15 is_stmt 1 discriminator 1 view .LVU151
+ 559              		.loc 1 93 17 is_stmt 0 discriminator 1 view .LVU152
+ 560 0194 2748     		ldr	r0, .L50+16
+ 561 0196 284B     		ldr	r3, .L50+20
+ 562 0198 9847     		blx	r3
+ 563              	.LVL69:
+ 564              		.loc 1 93 3 discriminator 1 view .LVU153
+ 565 019a A042     		cmp	r0, r4
+ 566 019c F6D8     		bhi	.L36
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 11
+
+
+ 567              	.LBE13:
+ 568              		.loc 1 96 3 is_stmt 1 view .LVU154
+ 569 019e 0820     		movs	r0, #8
+ 570 01a0 274B     		ldr	r3, .L50+28
+ 571 01a2 9847     		blx	r3
+ 572              	.LVL70:
+ 573              		.loc 1 97 3 view .LVU155
+ 574              	.LBB14:
+ 575              		.loc 1 97 7 view .LVU156
+ 576              		.loc 1 97 11 is_stmt 0 view .LVU157
+ 577 01a4 0024     		movs	r4, #0
+ 578              	.LVL71:
+ 579              		.loc 1 97 3 view .LVU158
+ 580 01a6 03E0     		b	.L37
+ 581              	.LVL72:
+ 582              	.L38:
+ 583              		.loc 1 98 4 is_stmt 1 discriminator 3 view .LVU159
+ 584 01a8 0820     		movs	r0, #8
+ 585 01aa 254B     		ldr	r3, .L50+28
+ 586 01ac 9847     		blx	r3
+ 587              	.LVL73:
+ 588              		.loc 1 97 36 discriminator 3 view .LVU160
+ 589              		.loc 1 97 37 is_stmt 0 discriminator 3 view .LVU161
+ 590 01ae 0134     		adds	r4, r4, #1
+ 591              	.LVL74:
+ 592              	.L37:
+ 593              		.loc 1 97 15 is_stmt 1 discriminator 1 view .LVU162
+ 594              		.loc 1 97 17 is_stmt 0 discriminator 1 view .LVU163
+ 595 01b0 2248     		ldr	r0, .L50+24
+ 596 01b2 214B     		ldr	r3, .L50+20
+ 597 01b4 9847     		blx	r3
+ 598              	.LVL75:
+ 599              		.loc 1 97 3 discriminator 1 view .LVU164
+ 600 01b6 A042     		cmp	r0, r4
+ 601 01b8 F6D8     		bhi	.L38
+ 602              	.LBE14:
+ 603              		.loc 1 100 3 is_stmt 1 view .LVU165
+ 604 01ba 0820     		movs	r0, #8
+ 605 01bc 204B     		ldr	r3, .L50+28
+ 606 01be 9847     		blx	r3
+ 607              	.LVL76:
+ 608              		.loc 1 101 3 view .LVU166
+ 609              	.LBB15:
+ 610              		.loc 1 101 7 view .LVU167
+ 611              		.loc 1 101 11 is_stmt 0 view .LVU168
+ 612 01c0 0024     		movs	r4, #0
+ 613              	.LVL77:
+ 614              	.L39:
+ 615              		.loc 1 101 15 is_stmt 1 discriminator 1 view .LVU169
+ 616              		.loc 1 101 17 is_stmt 0 discriminator 1 view .LVU170
+ 617 01c2 2048     		ldr	r0, .L50+32
+ 618 01c4 1C4B     		ldr	r3, .L50+20
+ 619 01c6 9847     		blx	r3
+ 620              	.LVL78:
+ 621              		.loc 1 101 3 discriminator 1 view .LVU171
+ 622 01c8 A042     		cmp	r0, r4
+ 623 01ca 25D8     		bhi	.L48
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 12
+
+
+ 624              	.LVL79:
+ 625              	.L41:
+ 626              		.loc 1 101 3 discriminator 1 view .LVU172
+ 627              	.LBE15:
+ 628              		.loc 1 48 2 is_stmt 1 view .LVU173
+ 629              		.loc 1 49 3 view .LVU174
+ 630 01cc 1F4B     		ldr	r3, .L50+40
+ 631 01ce 1868     		ldr	r0, [r3]	@ float
+ 632 01d0 1F4D     		ldr	r5, .L50+44
+ 633 01d2 A847     		blx	r5
+ 634              	.LVL80:
+ 635 01d4 0A22     		movs	r2, #10
+ 636 01d6 1B49     		ldr	r1, .L50+32
+ 637 01d8 1E4C     		ldr	r4, .L50+48
+ 638 01da A047     		blx	r4
+ 639              	.LVL81:
+ 640              		.loc 1 50 3 view .LVU175
+ 641 01dc 1E4B     		ldr	r3, .L50+52
+ 642 01de 1868     		ldr	r0, [r3]	@ float
+ 643 01e0 A847     		blx	r5
+ 644              	.LVL82:
+ 645 01e2 0A22     		movs	r2, #10
+ 646 01e4 1349     		ldr	r1, .L50+16
+ 647 01e6 A047     		blx	r4
+ 648              	.LVL83:
+ 649              		.loc 1 51 3 view .LVU176
+ 650 01e8 1C4B     		ldr	r3, .L50+56
+ 651 01ea 1868     		ldr	r0, [r3]	@ float
+ 652 01ec A847     		blx	r5
+ 653              	.LVL84:
+ 654 01ee 0A22     		movs	r2, #10
+ 655 01f0 1249     		ldr	r1, .L50+24
+ 656 01f2 A047     		blx	r4
+ 657              	.LVL85:
+ 658              		.loc 1 53 3 view .LVU177
+ 659 01f4 9821     		movs	r1, #152
+ 660 01f6 0020     		movs	r0, #0
+ 661 01f8 0D4B     		ldr	r3, .L50+12
+ 662 01fa 9847     		blx	r3
+ 663              	.LVL86:
+ 664              		.loc 1 54 3 view .LVU178
+ 665              	.LBB16:
+ 666              		.loc 1 54 7 view .LVU179
+ 667              		.loc 1 54 11 is_stmt 0 view .LVU180
+ 668 01fc 0024     		movs	r4, #0
+ 669              	.LVL87:
+ 670              	.L17:
+ 671              		.loc 1 54 15 is_stmt 1 discriminator 1 view .LVU181
+ 672              		.loc 1 54 17 is_stmt 0 discriminator 1 view .LVU182
+ 673 01fe 1148     		ldr	r0, .L50+32
+ 674 0200 0D4B     		ldr	r3, .L50+20
+ 675 0202 9847     		blx	r3
+ 676              	.LVL88:
+ 677              		.loc 1 54 3 discriminator 1 view .LVU183
+ 678 0204 A042     		cmp	r0, r4
+ 679 0206 7FF640AF 		bls	.L49
+ 680              		.loc 1 55 4 is_stmt 1 discriminator 3 view .LVU184
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 13
+
+
+ 681 020a 0E4B     		ldr	r3, .L50+32
+ 682 020c 195D     		ldrb	r1, [r3, r4]	@ zero_extendqisi2
+ 683 020e 0120     		movs	r0, #1
+ 684 0210 074B     		ldr	r3, .L50+12
+ 685 0212 9847     		blx	r3
+ 686              	.LVL89:
+ 687              		.loc 1 54 34 discriminator 3 view .LVU185
+ 688              		.loc 1 54 35 is_stmt 0 discriminator 3 view .LVU186
+ 689 0214 0134     		adds	r4, r4, #1
+ 690              	.LVL90:
+ 691              		.loc 1 54 35 discriminator 3 view .LVU187
+ 692 0216 F2E7     		b	.L17
+ 693              	.LVL91:
+ 694              	.L48:
+ 695              		.loc 1 54 35 discriminator 3 view .LVU188
+ 696              	.LBE16:
+ 697              	.LBB17:
+ 698              		.loc 1 102 4 is_stmt 1 discriminator 3 view .LVU189
+ 699 0218 0820     		movs	r0, #8
+ 700 021a 094B     		ldr	r3, .L50+28
+ 701 021c 9847     		blx	r3
+ 702              	.LVL92:
+ 703              		.loc 1 101 34 discriminator 3 view .LVU190
+ 704              		.loc 1 101 35 is_stmt 0 discriminator 3 view .LVU191
+ 705 021e 0134     		adds	r4, r4, #1
+ 706              	.LVL93:
+ 707              		.loc 1 101 35 discriminator 3 view .LVU192
+ 708 0220 CFE7     		b	.L39
+ 709              	.L51:
+ 710 0222 00BF     		.align	2
+ 711              	.L50:
+ 712 0224 00000000 		.word	.LC0
+ 713 0228 0C000000 		.word	.LC1
+ 714 022c 18000000 		.word	.LC2
+ 715 0230 00000000 		.word	LCD_CommandEnqueue
+ 716 0234 00000000 		.word	.LANCHOR1
+ 717 0238 00000000 		.word	strlen
+ 718 023c 00000000 		.word	.LANCHOR2
+ 719 0240 00000000 		.word	UART_AsyncTransmitCharacter
+ 720 0244 00000000 		.word	.LANCHOR0
+ 721 0248 00000000 		.word	vTaskDelay
+ 722 024c 00000000 		.word	tempSensor
+ 723 0250 00000000 		.word	__aeabi_f2iz
+ 724 0254 00000000 		.word	itoa
+ 725 0258 00000000 		.word	windvaneSensor
+ 726 025c 00000000 		.word	brzinaSensor
+ 727              	.LBE17:
+ 728              		.cfi_endproc
+ 729              	.LFE69:
+ 731              		.section	.rodata.homeworkInit.str1.4,"aMS",%progbits,1
+ 732              		.align	2
+ 733              	.LC3:
+ 734 0000 686F6D20 		.ascii	"hom task\000"
+ 734      7461736B 
+ 734      00
+ 735 0009 000000   		.align	2
+ 736              	.LC4:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 14
+
+
+ 737 000c 74696D69 		.ascii	"timi handle\000"
+ 737      2068616E 
+ 737      646C6500 
+ 738              		.section	.text.homeworkInit,"ax",%progbits
+ 739              		.align	1
+ 740              		.global	homeworkInit
+ 741              		.syntax unified
+ 742              		.thumb
+ 743              		.thumb_func
+ 744              		.fpu softvfp
+ 746              	homeworkInit:
+ 747              	.LFB71:
+ 748              		.loc 1 115 1 is_stmt 1 view -0
+ 749              		.cfi_startproc
+ 750              		@ args = 0, pretend = 0, frame = 0
+ 751              		@ frame_needed = 0, uses_anonymous_args = 0
+ 752 0000 10B5     		push	{r4, lr}
+ 753              	.LCFI3:
+ 754              		.cfi_def_cfa_offset 8
+ 755              		.cfi_offset 4, -8
+ 756              		.cfi_offset 14, -4
+ 757 0002 82B0     		sub	sp, sp, #8
+ 758              	.LCFI4:
+ 759              		.cfi_def_cfa_offset 16
+ 760              		.loc 1 116 2 view .LVU194
+ 761 0004 134B     		ldr	r3, .L54
+ 762 0006 9847     		blx	r3
+ 763              	.LVL94:
+ 764              		.loc 1 117 2 view .LVU195
+ 765 0008 134B     		ldr	r3, .L54+4
+ 766 000a 9847     		blx	r3
+ 767              	.LVL95:
+ 768              		.loc 1 118 2 view .LVU196
+ 769 000c 134B     		ldr	r3, .L54+8
+ 770 000e 9847     		blx	r3
+ 771              	.LVL96:
+ 772              		.loc 1 119 2 view .LVU197
+ 773 0010 134B     		ldr	r3, .L54+12
+ 774 0012 0193     		str	r3, [sp, #4]
+ 775 0014 0223     		movs	r3, #2
+ 776 0016 0093     		str	r3, [sp]
+ 777 0018 0023     		movs	r3, #0
+ 778 001a 8022     		movs	r2, #128
+ 779 001c 1149     		ldr	r1, .L54+16
+ 780 001e 1248     		ldr	r0, .L54+20
+ 781 0020 124C     		ldr	r4, .L54+24
+ 782 0022 A047     		blx	r4
+ 783              	.LVL97:
+ 784              		.loc 1 120 2 view .LVU198
+ 785              		.loc 1 120 21 is_stmt 0 view .LVU199
+ 786 0024 124B     		ldr	r3, .L54+28
+ 787 0026 0093     		str	r3, [sp]
+ 788 0028 0023     		movs	r3, #0
+ 789 002a 0122     		movs	r2, #1
+ 790 002c 4FF4FA71 		mov	r1, #500
+ 791 0030 1048     		ldr	r0, .L54+32
+ 792 0032 114C     		ldr	r4, .L54+36
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 15
+
+
+ 793 0034 A047     		blx	r4
+ 794              	.LVL98:
+ 795 0036 0446     		mov	r4, r0
+ 796              	.LVL99:
+ 797              		.loc 1 121 2 is_stmt 1 view .LVU200
+ 798 0038 104B     		ldr	r3, .L54+40
+ 799 003a 9847     		blx	r3
+ 800              	.LVL100:
+ 801              		.loc 1 121 2 is_stmt 0 view .LVU201
+ 802 003c 0246     		mov	r2, r0
+ 803 003e 4FF0FF33 		mov	r3, #-1
+ 804 0042 0093     		str	r3, [sp]
+ 805 0044 0023     		movs	r3, #0
+ 806 0046 0121     		movs	r1, #1
+ 807 0048 2046     		mov	r0, r4
+ 808 004a 0D4C     		ldr	r4, .L54+44
+ 809              	.LVL101:
+ 810              		.loc 1 121 2 view .LVU202
+ 811 004c A047     		blx	r4
+ 812              	.LVL102:
+ 813              		.loc 1 123 1 view .LVU203
+ 814 004e 02B0     		add	sp, sp, #8
+ 815              	.LCFI5:
+ 816              		.cfi_def_cfa_offset 8
+ 817              		@ sp needed
+ 818 0050 10BD     		pop	{r4, pc}
+ 819              	.L55:
+ 820 0052 00BF     		.align	2
+ 821              	.L54:
+ 822 0054 00000000 		.word	LCD_Init
+ 823 0058 00000000 		.word	UART_Init
+ 824 005c 00000000 		.word	temp_init
+ 825 0060 00000000 		.word	.LANCHOR3
+ 826 0064 00000000 		.word	.LC3
+ 827 0068 00000000 		.word	homeworkTask
+ 828 006c 00000000 		.word	xTaskCreate
+ 829 0070 00000000 		.word	led_dioda
+ 830 0074 0C000000 		.word	.LC4
+ 831 0078 00000000 		.word	xTimerCreate
+ 832 007c 00000000 		.word	xTaskGetTickCount
+ 833 0080 00000000 		.word	xTimerGenericCommand
+ 834              		.cfi_endproc
+ 835              	.LFE71:
+ 837              		.section	.bss.brzinaText,"aw",%nobits
+ 838              		.align	2
+ 839              		.set	.LANCHOR2,. + 0
+ 842              	brzinaText:
+ 843 0000 00000000 		.space	4
+ 844              		.section	.bss.task,"aw",%nobits
+ 845              		.align	2
+ 846              		.set	.LANCHOR3,. + 0
+ 849              	task:
+ 850 0000 00000000 		.space	4
+ 851              		.section	.bss.tempText,"aw",%nobits
+ 852              		.align	2
+ 853              		.set	.LANCHOR0,. + 0
+ 856              	tempText:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 16
+
+
+ 857 0000 00000000 		.space	4
+ 858              		.section	.bss.windvaveText,"aw",%nobits
+ 859              		.align	2
+ 860              		.set	.LANCHOR1,. + 0
+ 863              	windvaveText:
+ 864 0000 00000000 		.space	4
+ 865              		.text
+ 866              	.Letext0:
+ 867              		.file 2 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 868              		.file 3 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 869              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 870              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 871              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 872              		.file 7 "../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"
+ 873              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 874              		.file 9 "../Core/Inc/driver_lcd.h"
+ 875              		.file 10 "../Core/Inc/driver_temp.h"
+ 876              		.file 11 "../Core/Inc/driver_uart.h"
+ 877              		.file 12 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\i
+ 878              		.file 13 "../<built-in>"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 homework.c
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:17     .text.led_dioda:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:25     .text.led_dioda:0000000000000000 led_dioda
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:72     .text.led_dioda:0000000000000028 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:83     .rodata.homeworkTask.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:93     .text.homeworkTask:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:99     .text.homeworkTask:0000000000000000 homeworkTask
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:712    .text.homeworkTask:0000000000000224 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:732    .rodata.homeworkInit.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:739    .text.homeworkInit:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:746    .text.homeworkInit:0000000000000000 homeworkInit
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:822    .text.homeworkInit:0000000000000054 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:838    .bss.brzinaText:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:842    .bss.brzinaText:0000000000000000 brzinaText
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:845    .bss.task:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:849    .bss.task:0000000000000000 task
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:852    .bss.tempText:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:856    .bss.tempText:0000000000000000 tempText
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:859    .bss.windvaveText:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccYsBr5X.s:863    .bss.windvaveText:0000000000000000 windvaveText
+
+UNDEFINED SYMBOLS
+__aeabi_fcmplt
+brzinaSensor
+HAL_GPIO_WritePin
+HAL_GPIO_TogglePin
+__aeabi_f2iz
+LCD_CommandEnqueue
+strlen
+UART_AsyncTransmitCharacter
+vTaskDelay
+tempSensor
+itoa
+windvaneSensor
+LCD_Init
+UART_Init
+temp_init
+xTaskCreate
+xTimerCreate
+xTaskGetTickCount
+xTimerGenericCommand

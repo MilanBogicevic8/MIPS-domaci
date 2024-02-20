@@ -1,0 +1,613 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"homework.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	__aeabi_f2uiz
+  16              		.section	.rodata.homeworkTask.str1.4,"aMS",%progbits,1
+  17              		.align	2
+  18              	.LC1:
+  19 0000 54686C64 		.ascii	"Thld:(??)=>\000"
+  19      3A283F3F 
+  19      293D3E00 
+  20              		.section	.text.homeworkTask,"ax",%progbits
+  21              		.align	1
+  22              		.arch armv7-m
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  26              		.fpu softvfp
+  28              	homeworkTask:
+  29              	.LVL0:
+  30              	.LFB4:
+  31              		.file 1 "../Core/Src/homework.c"
+   1:../Core/Src/homework.c **** 
+  32              		.loc 1 27 1 view -0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 32
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		.loc 1 27 1 is_stmt 0 view .LVU1
+  37 0000 30B5     		push	{r4, r5, lr}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 12
+  40              		.cfi_offset 4, -12
+  41              		.cfi_offset 5, -8
+  42              		.cfi_offset 14, -4
+  43 0002 89B0     		sub	sp, sp, #36
+  44              	.LCFI1:
+  45              		.cfi_def_cfa_offset 48
+  46              		.loc 1 28 2 is_stmt 1 view .LVU2
+  47              		.loc 1 28 7 is_stmt 0 view .LVU3
+  48 0004 594B     		ldr	r3, .L23
+  49 0006 04AC     		add	r4, sp, #16
+  50 0008 0FCB     		ldm	r3, {r0, r1, r2, r3}
+  51              	.LVL1:
+  52              		.loc 1 28 7 view .LVU4
+  53 000a 07C4     		stmia	r4!, {r0, r1, r2}
+  54 000c 2380     		strh	r3, [r4]	@ movhi
+  55 000e 0024     		movs	r4, #0
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 2
+
+
+  56 0010 ADF81E40 		strh	r4, [sp, #30]	@ movhi
+  57              		.loc 1 29 2 is_stmt 1 view .LVU5
+  58 0014 8021     		movs	r1, #128
+  59 0016 2046     		mov	r0, r4
+  60 0018 554B     		ldr	r3, .L23+4
+  61 001a 9847     		blx	r3
+  62              	.LVL2:
+  63              		.loc 1 31 2 view .LVU6
+  64              	.LBB2:
+  65              		.loc 1 31 7 view .LVU7
+  66              		.loc 1 31 2 is_stmt 0 view .LVU8
+  67 001c 0BE0     		b	.L2
+  68              	.LVL3:
+  69              	.L3:
+  70              		.loc 1 33 3 is_stmt 1 discriminator 3 view .LVU9
+  71              		.loc 1 33 39 is_stmt 0 discriminator 3 view .LVU10
+  72 001e 08AB     		add	r3, sp, #32
+  73 0020 2344     		add	r3, r3, r4
+  74 0022 13F8105C 		ldrb	r5, [r3, #-16]	@ zero_extendqisi2
+  75              		.loc 1 33 3 discriminator 3 view .LVU11
+  76 0026 2946     		mov	r1, r5
+  77 0028 0120     		movs	r0, #1
+  78 002a 514B     		ldr	r3, .L23+4
+  79 002c 9847     		blx	r3
+  80              	.LVL4:
+  81              		.loc 1 34 3 is_stmt 1 discriminator 3 view .LVU12
+  82 002e 2846     		mov	r0, r5
+  83 0030 504B     		ldr	r3, .L23+8
+  84 0032 9847     		blx	r3
+  85              	.LVL5:
+  86              		.loc 1 31 31 discriminator 3 view .LVU13
+  87              		.loc 1 31 32 is_stmt 0 discriminator 3 view .LVU14
+  88 0034 0134     		adds	r4, r4, #1
+  89              	.LVL6:
+  90              	.L2:
+  91              		.loc 1 31 23 is_stmt 1 discriminator 1 view .LVU15
+  92              		.loc 1 31 2 is_stmt 0 discriminator 1 view .LVU16
+  93 0036 0F2C     		cmp	r4, #15
+  94 0038 F1D9     		bls	.L3
+  95              	.LBE2:
+  96              		.loc 1 36 2 is_stmt 1 view .LVU17
+  97              		.loc 1 36 7 is_stmt 0 view .LVU18
+  98 003a 4F4A     		ldr	r2, .L23+12
+  99 003c 01AB     		add	r3, sp, #4
+ 100 003e 07CA     		ldm	r2, {r0, r1, r2}
+ 101 0040 83E80700 		stm	r3, {r0, r1, r2}
+ 102              		.loc 1 37 2 is_stmt 1 view .LVU19
+ 103 0044 D021     		movs	r1, #208
+ 104 0046 0020     		movs	r0, #0
+ 105 0048 494B     		ldr	r3, .L23+4
+ 106 004a 9847     		blx	r3
+ 107              	.LVL7:
+ 108              		.loc 1 38 2 view .LVU20
+ 109              	.LBB3:
+ 110              		.loc 1 38 6 view .LVU21
+ 111              		.loc 1 38 10 is_stmt 0 view .LVU22
+ 112 004c 0024     		movs	r4, #0
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 3
+
+
+ 113              	.LVL8:
+ 114              		.loc 1 38 2 view .LVU23
+ 115 004e 07E0     		b	.L4
+ 116              	.LVL9:
+ 117              	.L5:
+ 118              		.loc 1 39 3 is_stmt 1 discriminator 3 view .LVU24
+ 119              		.loc 1 39 43 is_stmt 0 discriminator 3 view .LVU25
+ 120 0050 08AB     		add	r3, sp, #32
+ 121 0052 2344     		add	r3, r3, r4
+ 122              		.loc 1 39 3 discriminator 3 view .LVU26
+ 123 0054 13F81C1C 		ldrb	r1, [r3, #-28]	@ zero_extendqisi2
+ 124 0058 0120     		movs	r0, #1
+ 125 005a 454B     		ldr	r3, .L23+4
+ 126 005c 9847     		blx	r3
+ 127              	.LVL10:
+ 128              		.loc 1 38 36 is_stmt 1 discriminator 3 view .LVU27
+ 129              		.loc 1 38 37 is_stmt 0 discriminator 3 view .LVU28
+ 130 005e 0134     		adds	r4, r4, #1
+ 131              	.LVL11:
+ 132              	.L4:
+ 133              		.loc 1 38 14 is_stmt 1 discriminator 1 view .LVU29
+ 134              		.loc 1 38 16 is_stmt 0 discriminator 1 view .LVU30
+ 135 0060 01A8     		add	r0, sp, #4
+ 136 0062 464B     		ldr	r3, .L23+16
+ 137 0064 9847     		blx	r3
+ 138              	.LVL12:
+ 139              		.loc 1 38 2 discriminator 1 view .LVU31
+ 140 0066 A042     		cmp	r0, r4
+ 141 0068 F2D8     		bhi	.L5
+ 142 006a 6CE0     		b	.L16
+ 143              	.LVL13:
+ 144              	.L17:
+ 145              		.loc 1 38 2 discriminator 1 view .LVU32
+ 146              	.LBE3:
+ 147              	.LBB4:
+ 148              		.loc 1 51 19 view .LVU33
+ 149 006c 0025     		movs	r5, #0
+ 150              	.L6:
+ 151              	.LVL14:
+ 152              		.loc 1 61 3 is_stmt 1 view .LVU34
+ 153              	.LBB5:
+ 154              		.loc 1 61 8 view .LVU35
+ 155              		.loc 1 61 17 is_stmt 0 view .LVU36
+ 156 006e 0024     		movs	r4, #0
+ 157              		.loc 1 61 3 view .LVU37
+ 158 0070 04E0     		b	.L7
+ 159              	.LVL15:
+ 160              	.L18:
+ 161              		.loc 1 61 3 view .LVU38
+ 162              	.LBE5:
+ 163              		.loc 1 59 19 view .LVU39
+ 164 0072 0225     		movs	r5, #2
+ 165 0074 FBE7     		b	.L6
+ 166              	.LVL16:
+ 167              	.L8:
+ 168              	.LBB6:
+ 169              		.loc 1 69 5 is_stmt 1 view .LVU40
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 4
+
+
+ 170 0076 424B     		ldr	r3, .L23+20
+ 171 0078 9847     		blx	r3
+ 172              	.LVL17:
+ 173              	.L9:
+ 174              		.loc 1 61 60 discriminator 2 view .LVU41
+ 175              		.loc 1 61 61 is_stmt 0 discriminator 2 view .LVU42
+ 176 007a 0134     		adds	r4, r4, #1
+ 177              	.LVL18:
+ 178              	.L7:
+ 179              		.loc 1 61 24 is_stmt 1 discriminator 1 view .LVU43
+ 180              		.loc 1 61 47 is_stmt 0 discriminator 1 view .LVU44
+ 181 007c 414B     		ldr	r3, .L23+24
+ 182 007e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 183 0080 AB1A     		subs	r3, r5, r2
+ 184              		.loc 1 61 28 discriminator 1 view .LVU45
+ 185 0082 002B     		cmp	r3, #0
+ 186 0084 B8BF     		it	lt
+ 187 0086 5B42     		rsblt	r3, r3, #0
+ 188              		.loc 1 61 3 discriminator 1 view .LVU46
+ 189 0088 A342     		cmp	r3, r4
+ 190 008a 04D9     		bls	.L21
+ 191              		.loc 1 63 4 is_stmt 1 view .LVU47
+ 192              		.loc 1 63 7 is_stmt 0 view .LVU48
+ 193 008c AA42     		cmp	r2, r5
+ 194 008e F2D2     		bcs	.L8
+ 195              		.loc 1 65 5 is_stmt 1 view .LVU49
+ 196 0090 3D4B     		ldr	r3, .L23+28
+ 197 0092 9847     		blx	r3
+ 198              	.LVL19:
+ 199 0094 F1E7     		b	.L9
+ 200              	.L21:
+ 201              	.LBE6:
+ 202              		.loc 1 72 3 view .LVU50
+ 203              		.loc 1 72 12 is_stmt 0 view .LVU51
+ 204 0096 3B4B     		ldr	r3, .L23+24
+ 205 0098 1D70     		strb	r5, [r3]
+ 206              		.loc 1 75 3 is_stmt 1 view .LVU52
+ 207 009a 8D21     		movs	r1, #141
+ 208 009c 0020     		movs	r0, #0
+ 209 009e 344B     		ldr	r3, .L23+4
+ 210 00a0 9847     		blx	r3
+ 211              	.LVL20:
+ 212              		.loc 1 77 3 view .LVU53
+ 213              	.LBB7:
+ 214              		.loc 1 77 8 view .LVU54
+ 215              		.loc 1 77 17 is_stmt 0 view .LVU55
+ 216 00a2 0024     		movs	r4, #0
+ 217              	.LVL21:
+ 218              	.L11:
+ 219              		.loc 1 77 24 is_stmt 1 discriminator 1 view .LVU56
+ 220              		.loc 1 77 28 is_stmt 0 discriminator 1 view .LVU57
+ 221 00a4 3948     		ldr	r0, .L23+32
+ 222 00a6 354B     		ldr	r3, .L23+16
+ 223 00a8 9847     		blx	r3
+ 224              	.LVL22:
+ 225              		.loc 1 77 3 discriminator 1 view .LVU58
+ 226 00aa A042     		cmp	r0, r4
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 5
+
+
+ 227 00ac 09D9     		bls	.L22
+ 228              		.loc 1 79 4 is_stmt 1 discriminator 3 view .LVU59
+ 229              		.loc 1 79 41 is_stmt 0 discriminator 3 view .LVU60
+ 230 00ae 374D     		ldr	r5, .L23+32
+ 231              		.loc 1 79 4 discriminator 3 view .LVU61
+ 232 00b0 295D     		ldrb	r1, [r5, r4]	@ zero_extendqisi2
+ 233 00b2 0120     		movs	r0, #1
+ 234 00b4 2E4B     		ldr	r3, .L23+4
+ 235 00b6 9847     		blx	r3
+ 236              	.LVL23:
+ 237              		.loc 1 80 4 is_stmt 1 discriminator 3 view .LVU62
+ 238 00b8 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 239 00ba 2E4B     		ldr	r3, .L23+8
+ 240 00bc 9847     		blx	r3
+ 241              	.LVL24:
+ 242              		.loc 1 77 46 discriminator 3 view .LVU63
+ 243              		.loc 1 77 47 is_stmt 0 discriminator 3 view .LVU64
+ 244 00be 0134     		adds	r4, r4, #1
+ 245              	.LVL25:
+ 246              		.loc 1 77 47 discriminator 3 view .LVU65
+ 247 00c0 F0E7     		b	.L11
+ 248              	.L22:
+ 249              		.loc 1 77 47 discriminator 3 view .LVU66
+ 250              	.LBE7:
+ 251              		.loc 1 84 3 is_stmt 1 view .LVU67
+ 252 00c2 C820     		movs	r0, #200
+ 253 00c4 324B     		ldr	r3, .L23+36
+ 254 00c6 9847     		blx	r3
+ 255              	.LVL26:
+ 256              		.loc 1 87 3 view .LVU68
+ 257 00c8 8D21     		movs	r1, #141
+ 258 00ca 0020     		movs	r0, #0
+ 259 00cc 284B     		ldr	r3, .L23+4
+ 260 00ce 9847     		blx	r3
+ 261              	.LVL27:
+ 262              		.loc 1 89 3 view .LVU69
+ 263              	.LBB8:
+ 264              		.loc 1 89 8 view .LVU70
+ 265              		.loc 1 89 17 is_stmt 0 view .LVU71
+ 266 00d0 0024     		movs	r4, #0
+ 267              	.LVL28:
+ 268              		.loc 1 89 3 view .LVU72
+ 269 00d2 07E0     		b	.L13
+ 270              	.LVL29:
+ 271              	.L14:
+ 272              		.loc 1 91 4 is_stmt 1 discriminator 3 view .LVU73
+ 273 00d4 2021     		movs	r1, #32
+ 274 00d6 0120     		movs	r0, #1
+ 275 00d8 254B     		ldr	r3, .L23+4
+ 276 00da 9847     		blx	r3
+ 277              	.LVL30:
+ 278              		.loc 1 92 4 discriminator 3 view .LVU74
+ 279 00dc 0820     		movs	r0, #8
+ 280 00de 254B     		ldr	r3, .L23+8
+ 281 00e0 9847     		blx	r3
+ 282              	.LVL31:
+ 283              		.loc 1 89 46 discriminator 3 view .LVU75
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 6
+
+
+ 284              		.loc 1 89 47 is_stmt 0 discriminator 3 view .LVU76
+ 285 00e2 0134     		adds	r4, r4, #1
+ 286              	.LVL32:
+ 287              	.L13:
+ 288              		.loc 1 89 24 is_stmt 1 discriminator 1 view .LVU77
+ 289              		.loc 1 89 28 is_stmt 0 discriminator 1 view .LVU78
+ 290 00e4 2948     		ldr	r0, .L23+32
+ 291 00e6 254B     		ldr	r3, .L23+16
+ 292 00e8 9847     		blx	r3
+ 293              	.LVL33:
+ 294              		.loc 1 89 3 discriminator 1 view .LVU79
+ 295 00ea A042     		cmp	r0, r4
+ 296 00ec F2D8     		bhi	.L14
+ 297              	.LBE8:
+ 298              		.loc 1 96 3 is_stmt 1 view .LVU80
+ 299 00ee D621     		movs	r1, #214
+ 300 00f0 0020     		movs	r0, #0
+ 301 00f2 1F4C     		ldr	r4, .L23+4
+ 302              	.LVL34:
+ 303              		.loc 1 96 3 is_stmt 0 view .LVU81
+ 304 00f4 A047     		blx	r4
+ 305              	.LVL35:
+ 306              		.loc 1 97 3 is_stmt 1 view .LVU82
+ 307              		.loc 1 97 36 is_stmt 0 view .LVU83
+ 308 00f6 274D     		ldr	r5, .L23+40
+ 309 00f8 2978     		ldrb	r1, [r5]	@ zero_extendqisi2
+ 310              		.loc 1 97 3 view .LVU84
+ 311 00fa 0120     		movs	r0, #1
+ 312 00fc A047     		blx	r4
+ 313              	.LVL36:
+ 314              		.loc 1 98 3 is_stmt 1 view .LVU85
+ 315              		.loc 1 98 36 is_stmt 0 view .LVU86
+ 316 00fe 6978     		ldrb	r1, [r5, #1]	@ zero_extendqisi2
+ 317              		.loc 1 98 3 view .LVU87
+ 318 0100 0120     		movs	r0, #1
+ 319 0102 A047     		blx	r4
+ 320              	.LVL37:
+ 321              		.loc 1 99 3 is_stmt 1 view .LVU88
+ 322 0104 DB21     		movs	r1, #219
+ 323 0106 0020     		movs	r0, #0
+ 324 0108 A047     		blx	r4
+ 325              	.LVL38:
+ 326              		.loc 1 100 3 view .LVU89
+ 327              		.loc 1 100 46 is_stmt 0 view .LVU90
+ 328 010a 234B     		ldr	r3, .L23+44
+ 329 010c 1B68     		ldr	r3, [r3]
+ 330              		.loc 1 100 3 view .LVU91
+ 331 010e 092B     		cmp	r3, #9
+ 332 0110 2AD9     		bls	.L19
+ 333              		.loc 1 100 67 discriminator 1 view .LVU92
+ 334 0112 214B     		ldr	r3, .L23+44
+ 335 0114 1968     		ldr	r1, [r3]
+ 336 0116 214B     		ldr	r3, .L23+48
+ 337 0118 A3FB0131 		umull	r3, r1, r3, r1
+ 338              		.loc 1 100 70 discriminator 1 view .LVU93
+ 339 011c C1F3C701 		ubfx	r1, r1, #3, #8
+ 340              		.loc 1 100 3 discriminator 1 view .LVU94
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 7
+
+
+ 341 0120 3031     		adds	r1, r1, #48
+ 342 0122 C9B2     		uxtb	r1, r1
+ 343              	.L15:
+ 344              		.loc 1 100 3 discriminator 4 view .LVU95
+ 345 0124 0120     		movs	r0, #1
+ 346 0126 124C     		ldr	r4, .L23+4
+ 347 0128 A047     		blx	r4
+ 348              	.LVL39:
+ 349              		.loc 1 101 3 is_stmt 1 discriminator 4 view .LVU96
+ 350              		.loc 1 101 44 is_stmt 0 discriminator 4 view .LVU97
+ 351 012a 1B4B     		ldr	r3, .L23+44
+ 352 012c 1B68     		ldr	r3, [r3]
+ 353 012e 1B49     		ldr	r1, .L23+48
+ 354 0130 A1FB0321 		umull	r2, r1, r1, r3
+ 355 0134 C908     		lsrs	r1, r1, #3
+ 356 0136 01EB8101 		add	r1, r1, r1, lsl #2
+ 357 013a A3EB4101 		sub	r1, r3, r1, lsl #1
+ 358              		.loc 1 101 3 discriminator 4 view .LVU98
+ 359 013e 3031     		adds	r1, r1, #48
+ 360 0140 C9B2     		uxtb	r1, r1
+ 361 0142 0120     		movs	r0, #1
+ 362 0144 A047     		blx	r4
+ 363              	.LVL40:
+ 364              	.LBE4:
+ 365              		.loc 1 42 8 is_stmt 1 discriminator 4 view .LVU99
+ 366              	.L16:
+ 367              		.loc 1 42 2 view .LVU100
+ 368              	.LBB9:
+ 369              		.loc 1 44 3 view .LVU101
+ 370              		.loc 1 44 15 is_stmt 0 view .LVU102
+ 371 0146 164B     		ldr	r3, .L23+52
+ 372 0148 9847     		blx	r3
+ 373              	.LVL41:
+ 374              		.loc 1 44 13 view .LVU103
+ 375 014a 164B     		ldr	r3, .L23+56
+ 376 014c 9847     		blx	r3
+ 377              	.LVL42:
+ 378 014e 164C     		ldr	r4, .L23+60
+ 379 0150 2060     		str	r0, [r4]
+ 380              		.loc 1 45 3 is_stmt 1 view .LVU104
+ 381 0152 0A22     		movs	r2, #10
+ 382 0154 0D49     		ldr	r1, .L23+32
+ 383 0156 154B     		ldr	r3, .L23+64
+ 384 0158 9847     		blx	r3
+ 385              	.LVL43:
+ 386              		.loc 1 48 3 view .LVU105
+ 387              		.loc 1 49 3 view .LVU106
+ 388              		.loc 1 49 17 is_stmt 0 view .LVU107
+ 389 015a 2368     		ldr	r3, [r4]
+ 390              		.loc 1 49 6 view .LVU108
+ 391 015c 1D2B     		cmp	r3, #29
+ 392 015e 85D9     		bls	.L17
+ 393              		.loc 1 53 8 is_stmt 1 view .LVU109
+ 394              		.loc 1 53 11 is_stmt 0 view .LVU110
+ 395 0160 222B     		cmp	r3, #34
+ 396 0162 86D8     		bhi	.L18
+ 397              		.loc 1 55 19 view .LVU111
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 8
+
+
+ 398 0164 0125     		movs	r5, #1
+ 399 0166 82E7     		b	.L6
+ 400              	.L19:
+ 401              		.loc 1 100 3 view .LVU112
+ 402 0168 2021     		movs	r1, #32
+ 403 016a DBE7     		b	.L15
+ 404              	.L24:
+ 405              		.align	2
+ 406              	.L23:
+ 407 016c 00000000 		.word	.LANCHOR0
+ 408 0170 00000000 		.word	LCD_CommandEnqueue
+ 409 0174 00000000 		.word	UART_AsyncTransmitCharacter
+ 410 0178 00000000 		.word	.LC1
+ 411 017c 00000000 		.word	strlen
+ 412 0180 00000000 		.word	MOTOR_SpeedDecrease
+ 413 0184 00000000 		.word	.LANCHOR3
+ 414 0188 00000000 		.word	MOTOR_SpeedIncrease
+ 415 018c 00000000 		.word	.LANCHOR2
+ 416 0190 00000000 		.word	vTaskDelay
+ 417 0194 00000000 		.word	keys
+ 418 0198 00000000 		.word	temp_granica
+ 419 019c CDCCCCCC 		.word	-858993459
+ 420 01a0 00000000 		.word	TEMP_GetCurrentValue
+ 421 01a4 00000000 		.word	__aeabi_f2uiz
+ 422 01a8 00000000 		.word	.LANCHOR1
+ 423 01ac 00000000 		.word	itoa
+ 424              	.LBE9:
+ 425              		.cfi_endproc
+ 426              	.LFE4:
+ 428              		.section	.rodata.homeworkInit.str1.4,"aMS",%progbits,1
+ 429              		.align	2
+ 430              	.LC2:
+ 431 0000 686F6D65 		.ascii	"homeworkTask\000"
+ 431      776F726B 
+ 431      5461736B 
+ 431      00
+ 432              		.section	.text.homeworkInit,"ax",%progbits
+ 433              		.align	1
+ 434              		.global	homeworkInit
+ 435              		.syntax unified
+ 436              		.thumb
+ 437              		.thumb_func
+ 438              		.fpu softvfp
+ 440              	homeworkInit:
+ 441              	.LFB5:
+ 442              		.loc 1 107 1 is_stmt 1 view -0
+ 443              		.cfi_startproc
+ 444              		@ args = 0, pretend = 0, frame = 0
+ 445              		@ frame_needed = 0, uses_anonymous_args = 0
+ 446 0000 10B5     		push	{r4, lr}
+ 447              	.LCFI2:
+ 448              		.cfi_def_cfa_offset 8
+ 449              		.cfi_offset 4, -8
+ 450              		.cfi_offset 14, -4
+ 451 0002 82B0     		sub	sp, sp, #8
+ 452              	.LCFI3:
+ 453              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 9
+
+
+ 454              		.loc 1 108 2 view .LVU114
+ 455 0004 0A4B     		ldr	r3, .L27
+ 456 0006 9847     		blx	r3
+ 457              	.LVL44:
+ 458              		.loc 1 109 2 view .LVU115
+ 459 0008 0A4B     		ldr	r3, .L27+4
+ 460 000a 9847     		blx	r3
+ 461              	.LVL45:
+ 462              		.loc 1 110 2 view .LVU116
+ 463 000c 0A4B     		ldr	r3, .L27+8
+ 464 000e 9847     		blx	r3
+ 465              	.LVL46:
+ 466              		.loc 1 111 2 view .LVU117
+ 467 0010 0A4B     		ldr	r3, .L27+12
+ 468 0012 9847     		blx	r3
+ 469              	.LVL47:
+ 470              		.loc 1 112 2 view .LVU118
+ 471 0014 0A4B     		ldr	r3, .L27+16
+ 472 0016 9847     		blx	r3
+ 473              	.LVL48:
+ 474              		.loc 1 113 2 view .LVU119
+ 475 0018 0023     		movs	r3, #0
+ 476 001a 0193     		str	r3, [sp, #4]
+ 477 001c 0522     		movs	r2, #5
+ 478 001e 0092     		str	r2, [sp]
+ 479 0020 4022     		movs	r2, #64
+ 480 0022 0849     		ldr	r1, .L27+20
+ 481 0024 0848     		ldr	r0, .L27+24
+ 482 0026 094C     		ldr	r4, .L27+28
+ 483 0028 A047     		blx	r4
+ 484              	.LVL49:
+ 485              		.loc 1 114 1 is_stmt 0 view .LVU120
+ 486 002a 02B0     		add	sp, sp, #8
+ 487              	.LCFI4:
+ 488              		.cfi_def_cfa_offset 8
+ 489              		@ sp needed
+ 490 002c 10BD     		pop	{r4, pc}
+ 491              	.L28:
+ 492 002e 00BF     		.align	2
+ 493              	.L27:
+ 494 0030 00000000 		.word	LCD_Init
+ 495 0034 00000000 		.word	UART_Init
+ 496 0038 00000000 		.word	MOTOR_Init
+ 497 003c 00000000 		.word	TEMP_Init
+ 498 0040 00000000 		.word	Key_init
+ 499 0044 00000000 		.word	.LC2
+ 500 0048 00000000 		.word	homeworkTask
+ 501 004c 00000000 		.word	xTaskCreate
+ 502              		.cfi_endproc
+ 503              	.LFE5:
+ 505              		.global	fanState
+ 506              		.section	.rodata
+ 507              		.align	2
+ 508              		.set	.LANCHOR0,. + 0
+ 509              	.LC0:
+ 510 0000 54656D70 		.ascii	"Temperatura: \000"
+ 510      65726174 
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 10
+
+
+ 510      7572613A 
+ 510      2000
+ 511 000e 0000     		.space	2
+ 512              		.section	.bss.fanState,"aw",%nobits
+ 513              		.set	.LANCHOR3,. + 0
+ 516              	fanState:
+ 517 0000 00       		.space	1
+ 518              		.section	.bss.tempText,"aw",%nobits
+ 519              		.align	2
+ 520              		.set	.LANCHOR2,. + 0
+ 523              	tempText:
+ 524 0000 00000000 		.space	4
+ 525              		.section	.bss.tempValue,"aw",%nobits
+ 526              		.align	2
+ 527              		.set	.LANCHOR1,. + 0
+ 530              	tempValue:
+ 531 0000 00000000 		.space	4
+ 532              		.text
+ 533              	.Letext0:
+ 534              		.file 2 "../Core/Inc/homework.h"
+ 535              		.file 3 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 536              		.file 4 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 537              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 538              		.file 6 "../Core/Inc/driver_lcd.h"
+ 539              		.file 7 "../Core/Inc/keypad.h"
+ 540              		.file 8 "../Core/Inc/driver_uart.h"
+ 541              		.file 9 "../Core/Inc/driver_motor.h"
+ 542              		.file 10 "../Core/Inc/driver_temp.h"
+ 543              		.file 11 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 544              		.file 12 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\i
+ 545              		.file 13 "../<built-in>"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 homework.c
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:17     .rodata.homeworkTask.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:21     .text.homeworkTask:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:28     .text.homeworkTask:0000000000000000 homeworkTask
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:407    .text.homeworkTask:000000000000016c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:429    .rodata.homeworkInit.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:433    .text.homeworkInit:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:440    .text.homeworkInit:0000000000000000 homeworkInit
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:494    .text.homeworkInit:0000000000000030 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:516    .bss.fanState:0000000000000000 fanState
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:507    .rodata:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:517    .bss.fanState:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:519    .bss.tempText:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:523    .bss.tempText:0000000000000000 tempText
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:526    .bss.tempValue:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccSqmDyc.s:530    .bss.tempValue:0000000000000000 tempValue
+
+UNDEFINED SYMBOLS
+__aeabi_f2uiz
+LCD_CommandEnqueue
+UART_AsyncTransmitCharacter
+strlen
+MOTOR_SpeedDecrease
+MOTOR_SpeedIncrease
+vTaskDelay
+keys
+temp_granica
+TEMP_GetCurrentValue
+itoa
+LCD_Init
+UART_Init
+MOTOR_Init
+TEMP_Init
+Key_init
+xTaskCreate

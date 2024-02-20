@@ -1,0 +1,693 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"driver_temp.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.global	__aeabi_fcmpgt
+  16              		.section	.text.voltage2WindBearing,"ax",%progbits
+  17              		.align	1
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	voltage2WindBearing:
+  25              	.LVL0:
+  26              	.LFB69:
+  27              		.file 1 "../Core/Src/driver_temp.c"
+   1:../Core/Src/driver_temp.c **** 
+  28              		.loc 1 39 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 39 1 is_stmt 0 view .LVU1
+  33 0000 38B5     		push	{r3, r4, r5, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 3, -16
+  37              		.cfi_offset 4, -12
+  38              		.cfi_offset 5, -8
+  39              		.cfi_offset 14, -4
+  40 0002 0546     		mov	r5, r0
+  41              		.loc 1 40 2 is_stmt 1 view .LVU2
+  42              	.LBB2:
+  43              		.loc 1 40 7 view .LVU3
+  44              	.LVL1:
+  45              		.loc 1 40 16 is_stmt 0 view .LVU4
+  46 0004 0024     		movs	r4, #0
+  47              	.LVL2:
+  48              	.L2:
+  49              		.loc 1 40 23 is_stmt 1 discriminator 1 view .LVU5
+  50              		.loc 1 40 2 is_stmt 0 discriminator 1 view .LVU6
+  51 0006 0E2C     		cmp	r4, #14
+  52 0008 0CD8     		bhi	.L10
+  53              		.loc 1 42 3 is_stmt 1 view .LVU7
+  54              		.loc 1 42 6 is_stmt 0 view .LVU8
+  55 000a 2946     		mov	r1, r5
+  56 000c 064B     		ldr	r3, .L12
+  57 000e 53F82400 		ldr	r0, [r3, r4, lsl #2]	@ float
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 2
+
+
+  58 0012 064B     		ldr	r3, .L12+4
+  59 0014 9847     		blx	r3
+  60              	.LVL3:
+  61 0016 08B9     		cbnz	r0, .L11
+  62              		.loc 1 40 31 is_stmt 1 discriminator 2 view .LVU9
+  63              		.loc 1 40 32 is_stmt 0 discriminator 2 view .LVU10
+  64 0018 0134     		adds	r4, r4, #1
+  65              	.LVL4:
+  66              		.loc 1 40 32 discriminator 2 view .LVU11
+  67 001a F4E7     		b	.L2
+  68              	.L11:
+  69              		.loc 1 44 4 is_stmt 1 view .LVU12
+  70              		.loc 1 44 23 is_stmt 0 view .LVU13
+  71 001c 044B     		ldr	r3, .L12+8
+  72 001e 53F82400 		ldr	r0, [r3, r4, lsl #2]	@ float
+  73 0022 00E0     		b	.L1
+  74              	.L10:
+  75              		.loc 1 44 23 view .LVU14
+  76              	.LBE2:
+  77              		.loc 1 47 21 view .LVU15
+  78 0024 0348     		ldr	r0, .L12+12
+  79              	.L1:
+  80              		.loc 1 48 1 view .LVU16
+  81 0026 38BD     		pop	{r3, r4, r5, pc}
+  82              	.LVL5:
+  83              	.L13:
+  84              		.loc 1 48 1 view .LVU17
+  85              		.align	2
+  86              	.L12:
+  87 0028 00000000 		.word	.LANCHOR0
+  88 002c 00000000 		.word	__aeabi_fcmpgt
+  89 0030 00000000 		.word	.LANCHOR1
+  90 0034 0000E142 		.word	1122041856
+  91              		.cfi_endproc
+  92              	.LFE69:
+  94              		.global	__aeabi_ui2f
+  95              		.global	__aeabi_fmul
+  96              		.section	.text.temp_task,"ax",%progbits
+  97              		.align	1
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 101              		.fpu softvfp
+ 103              	temp_task:
+ 104              	.LFB70:
+ 105              		.loc 1 51 40 is_stmt 1 view -0
+ 106              		.cfi_startproc
+ 107              		@ Volatile: function does not return.
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110              	.LVL6:
+ 111              		.loc 1 51 40 is_stmt 0 view .LVU19
+ 112 0000 2DE98848 		push	{r3, r7, fp, lr}
+ 113              	.LCFI1:
+ 114              		.cfi_def_cfa_offset 16
+ 115              		.cfi_offset 3, -16
+ 116              		.cfi_offset 7, -12
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 3
+
+
+ 117              		.cfi_offset 11, -8
+ 118              		.cfi_offset 14, -4
+ 119              	.LVL7:
+ 120              	.L15:
+ 121              		.loc 1 52 2 is_stmt 1 discriminator 1 view .LVU20
+ 122              		.loc 1 53 3 discriminator 1 view .LVU21
+ 123 0004 DFF890B0 		ldr	fp, .L17
+ 124 0008 0022     		movs	r2, #0
+ 125 000a 4021     		movs	r1, #64
+ 126 000c 5846     		mov	r0, fp
+ 127 000e DFF88CA0 		ldr	r10, .L17+4
+ 128 0012 D047     		blx	r10
+ 129              	.LVL8:
+ 130              		.loc 1 54 3 discriminator 1 view .LVU22
+ 131 0014 224E     		ldr	r6, .L17+8
+ 132 0016 3046     		mov	r0, r6
+ 133 0018 DFF88890 		ldr	r9, .L17+12
+ 134 001c C847     		blx	r9
+ 135              	.LVL9:
+ 136              		.loc 1 55 3 discriminator 1 view .LVU23
+ 137 001e 4FF0FF31 		mov	r1, #-1
+ 138 0022 0120     		movs	r0, #1
+ 139 0024 DFF88080 		ldr	r8, .L17+16
+ 140 0028 C047     		blx	r8
+ 141              	.LVL10:
+ 142              		.loc 1 57 3 discriminator 1 view .LVU24
+ 143              		.loc 1 57 14 is_stmt 0 discriminator 1 view .LVU25
+ 144 002a 3046     		mov	r0, r6
+ 145 002c 1F4F     		ldr	r7, .L17+20
+ 146 002e B847     		blx	r7
+ 147              	.LVL11:
+ 148              		.loc 1 57 13 discriminator 1 view .LVU26
+ 149 0030 1F4B     		ldr	r3, .L17+24
+ 150 0032 9847     		blx	r3
+ 151              	.LVL12:
+ 152 0034 1F4C     		ldr	r4, .L17+28
+ 153 0036 2060     		str	r0, [r4]	@ float
+ 154              		.loc 1 58 3 is_stmt 1 discriminator 1 view .LVU27
+ 155              		.loc 1 58 13 is_stmt 0 discriminator 1 view .LVU28
+ 156 0038 2068     		ldr	r0, [r4]	@ float
+ 157 003a 1F4D     		ldr	r5, .L17+32
+ 158 003c 1F49     		ldr	r1, .L17+36
+ 159 003e A847     		blx	r5
+ 160              	.LVL13:
+ 161 0040 2060     		str	r0, [r4]	@ float
+ 162              		.loc 1 59 3 is_stmt 1 discriminator 1 view .LVU29
+ 163              		.loc 1 59 13 is_stmt 0 discriminator 1 view .LVU30
+ 164 0042 2068     		ldr	r0, [r4]	@ float
+ 165 0044 1E49     		ldr	r1, .L17+40
+ 166 0046 A847     		blx	r5
+ 167              	.LVL14:
+ 168 0048 2060     		str	r0, [r4]	@ float
+ 169              		.loc 1 60 3 is_stmt 1 discriminator 1 view .LVU31
+ 170              		.loc 1 60 13 is_stmt 0 discriminator 1 view .LVU32
+ 171 004a 2068     		ldr	r0, [r4]	@ float
+ 172 004c 4FF06651 		mov	r1, #964689920
+ 173 0050 A847     		blx	r5
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 4
+
+
+ 174              	.LVL15:
+ 175 0052 2060     		str	r0, [r4]	@ float
+ 176              		.loc 1 62 3 is_stmt 1 discriminator 1 view .LVU33
+ 177 0054 0122     		movs	r2, #1
+ 178 0056 4021     		movs	r1, #64
+ 179 0058 5846     		mov	r0, fp
+ 180 005a D047     		blx	r10
+ 181              	.LVL16:
+ 182              		.loc 1 63 3 discriminator 1 view .LVU34
+ 183 005c 3046     		mov	r0, r6
+ 184 005e C847     		blx	r9
+ 185              	.LVL17:
+ 186              		.loc 1 64 3 discriminator 1 view .LVU35
+ 187 0060 4FF0FF31 		mov	r1, #-1
+ 188 0064 0120     		movs	r0, #1
+ 189 0066 C047     		blx	r8
+ 190              	.LVL18:
+ 191              		.loc 1 66 3 discriminator 1 view .LVU36
+ 192              		.loc 1 66 18 is_stmt 0 discriminator 1 view .LVU37
+ 193 0068 3046     		mov	r0, r6
+ 194 006a B847     		blx	r7
+ 195              	.LVL19:
+ 196              		.loc 1 66 17 discriminator 1 view .LVU38
+ 197 006c 104B     		ldr	r3, .L17+24
+ 198 006e 9847     		blx	r3
+ 199              	.LVL20:
+ 200 0070 144C     		ldr	r4, .L17+44
+ 201 0072 2060     		str	r0, [r4]	@ float
+ 202              		.loc 1 67 3 is_stmt 1 discriminator 1 view .LVU39
+ 203              		.loc 1 67 17 is_stmt 0 discriminator 1 view .LVU40
+ 204 0074 2068     		ldr	r0, [r4]	@ float
+ 205 0076 1249     		ldr	r1, .L17+40
+ 206 0078 A847     		blx	r5
+ 207              	.LVL21:
+ 208 007a 2060     		str	r0, [r4]	@ float
+ 209              		.loc 1 68 3 is_stmt 1 discriminator 1 view .LVU41
+ 210              		.loc 1 68 17 is_stmt 0 discriminator 1 view .LVU42
+ 211 007c 2068     		ldr	r0, [r4]	@ float
+ 212 007e 4FF06651 		mov	r1, #964689920
+ 213 0082 A847     		blx	r5
+ 214              	.LVL22:
+ 215 0084 2060     		str	r0, [r4]	@ float
+ 216              		.loc 1 69 3 is_stmt 1 discriminator 1 view .LVU43
+ 217              		.loc 1 69 18 is_stmt 0 discriminator 1 view .LVU44
+ 218 0086 2068     		ldr	r0, [r4]	@ float
+ 219 0088 0F4B     		ldr	r3, .L17+48
+ 220 008a 9847     		blx	r3
+ 221              	.LVL23:
+ 222              		.loc 1 69 17 discriminator 1 view .LVU45
+ 223 008c 2060     		str	r0, [r4]	@ float
+ 224              		.loc 1 71 3 is_stmt 1 discriminator 1 view .LVU46
+ 225 008e 3220     		movs	r0, #50
+ 226 0090 0E4B     		ldr	r3, .L17+52
+ 227 0092 9847     		blx	r3
+ 228              	.LVL24:
+ 229              		.loc 1 52 7 discriminator 1 view .LVU47
+ 230 0094 B6E7     		b	.L15
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 5
+
+
+ 231              	.L18:
+ 232 0096 00BF     		.align	2
+ 233              	.L17:
+ 234 0098 00080140 		.word	1073809408
+ 235 009c 00000000 		.word	HAL_GPIO_WritePin
+ 236 00a0 00000000 		.word	hadc1
+ 237 00a4 00000000 		.word	HAL_ADC_Start_IT
+ 238 00a8 00000000 		.word	ulTaskNotifyTake
+ 239 00ac 00000000 		.word	HAL_ADC_GetValue
+ 240 00b0 00000000 		.word	__aeabi_ui2f
+ 241 00b4 00000000 		.word	.LANCHOR2
+ 242 00b8 00000000 		.word	__aeabi_fmul
+ 243 00bc 0000C842 		.word	1120403456
+ 244 00c0 0000A040 		.word	1084227584
+ 245 00c4 00000000 		.word	.LANCHOR3
+ 246 00c8 00000000 		.word	voltage2WindBearing
+ 247 00cc 00000000 		.word	vTaskDelay
+ 248              		.cfi_endproc
+ 249              	.LFE70:
+ 251              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
+ 252              		.align	1
+ 253              		.global	HAL_ADC_ConvCpltCallback
+ 254              		.syntax unified
+ 255              		.thumb
+ 256              		.thumb_func
+ 257              		.fpu softvfp
+ 259              	HAL_ADC_ConvCpltCallback:
+ 260              	.LVL25:
+ 261              	.LFB71:
+ 262              		.loc 1 76 1 view -0
+ 263              		.cfi_startproc
+ 264              		@ args = 0, pretend = 0, frame = 8
+ 265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 266              		.loc 1 77 2 view .LVU49
+ 267              		.loc 1 77 9 is_stmt 0 view .LVU50
+ 268 0000 0268     		ldr	r2, [r0]
+ 269              		.loc 1 77 26 view .LVU51
+ 270 0002 0E4B     		ldr	r3, .L28
+ 271 0004 1B68     		ldr	r3, [r3]
+ 272              		.loc 1 77 4 view .LVU52
+ 273 0006 9A42     		cmp	r2, r3
+ 274 0008 00D0     		beq	.L27
+ 275 000a 7047     		bx	lr
+ 276              	.L27:
+ 277              		.loc 1 76 1 view .LVU53
+ 278 000c 00B5     		push	{lr}
+ 279              	.LCFI2:
+ 280              		.cfi_def_cfa_offset 4
+ 281              		.cfi_offset 14, -4
+ 282 000e 83B0     		sub	sp, sp, #12
+ 283              	.LCFI3:
+ 284              		.cfi_def_cfa_offset 16
+ 285              		.loc 1 79 2 is_stmt 1 view .LVU54
+ 286              		.loc 1 79 13 is_stmt 0 view .LVU55
+ 287 0010 0023     		movs	r3, #0
+ 288 0012 0193     		str	r3, [sp, #4]
+ 289              		.loc 1 80 2 is_stmt 1 view .LVU56
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 6
+
+
+ 290 0014 01A9     		add	r1, sp, #4
+ 291 0016 0A4B     		ldr	r3, .L28+4
+ 292 0018 1868     		ldr	r0, [r3]
+ 293              	.LVL26:
+ 294              		.loc 1 80 2 is_stmt 0 view .LVU57
+ 295 001a 0A4B     		ldr	r3, .L28+8
+ 296 001c 9847     		blx	r3
+ 297              	.LVL27:
+ 298              		.loc 1 81 2 is_stmt 1 view .LVU58
+ 299 001e 019B     		ldr	r3, [sp, #4]
+ 300 0020 4BB1     		cbz	r3, .L19
+ 301              		.loc 1 81 2 discriminator 1 view .LVU59
+ 302 0022 4FF0E023 		mov	r3, #-536813568
+ 303 0026 4FF08052 		mov	r2, #268435456
+ 304 002a C3F8042D 		str	r2, [r3, #3332]
+ 305              		.loc 1 81 2 discriminator 1 view .LVU60
+ 306              		.syntax unified
+ 307              	@ 81 "Core/Src/driver_temp.c" 1
+ 308 002e BFF34F8F 		dsb
+ 309              	@ 0 "" 2
+ 310              		.loc 1 81 2 discriminator 1 view .LVU61
+ 311              	@ 81 "Core/Src/driver_temp.c" 1
+ 312 0032 BFF36F8F 		isb
+ 313              	@ 0 "" 2
+ 314              		.loc 1 81 27 discriminator 1 view .LVU62
+ 315              		.thumb
+ 316              		.syntax unified
+ 317              	.L19:
+ 318              		.loc 1 82 1 is_stmt 0 view .LVU63
+ 319 0036 03B0     		add	sp, sp, #12
+ 320              	.LCFI4:
+ 321              		.cfi_def_cfa_offset 4
+ 322              		@ sp needed
+ 323 0038 5DF804FB 		ldr	pc, [sp], #4
+ 324              	.L29:
+ 325              		.align	2
+ 326              	.L28:
+ 327 003c 00000000 		.word	hadc1
+ 328 0040 00000000 		.word	.LANCHOR4
+ 329 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 330              		.cfi_endproc
+ 331              	.LFE71:
+ 333              		.global	__aeabi_fsub
+ 334              		.global	__aeabi_fdiv
+ 335              		.global	__aeabi_f2d
+ 336              		.global	__aeabi_dmul
+ 337              		.global	__aeabi_d2f
+ 338              		.section	.text.HAL_TIM_IC_CaptureCallback,"ax",%progbits
+ 339              		.align	1
+ 340              		.global	HAL_TIM_IC_CaptureCallback
+ 341              		.syntax unified
+ 342              		.thumb
+ 343              		.thumb_func
+ 344              		.fpu softvfp
+ 346              	HAL_TIM_IC_CaptureCallback:
+ 347              	.LVL28:
+ 348              	.LFB72:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 7
+
+
+ 349              		.loc 1 85 1 is_stmt 1 view -0
+ 350              		.cfi_startproc
+ 351              		@ args = 0, pretend = 0, frame = 0
+ 352              		@ frame_needed = 0, uses_anonymous_args = 0
+ 353              		.loc 1 85 1 is_stmt 0 view .LVU65
+ 354 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 355              	.LCFI5:
+ 356              		.cfi_def_cfa_offset 24
+ 357              		.cfi_offset 4, -24
+ 358              		.cfi_offset 5, -20
+ 359              		.cfi_offset 6, -16
+ 360              		.cfi_offset 7, -12
+ 361              		.cfi_offset 8, -8
+ 362              		.cfi_offset 14, -4
+ 363              		.loc 1 86 2 is_stmt 1 view .LVU66
+ 364              		.loc 1 86 9 is_stmt 0 view .LVU67
+ 365 0004 0368     		ldr	r3, [r0]
+ 366              		.loc 1 86 26 view .LVU68
+ 367 0006 164A     		ldr	r2, .L34+8
+ 368 0008 1468     		ldr	r4, [r2]
+ 369              		.loc 1 86 4 view .LVU69
+ 370 000a A342     		cmp	r3, r4
+ 371 000c 01D0     		beq	.L33
+ 372              	.LVL29:
+ 373              	.L30:
+ 374              		.loc 1 92 1 view .LVU70
+ 375 000e BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 376              	.LVL30:
+ 377              	.L33:
+ 378              		.loc 1 88 2 is_stmt 1 view .LVU71
+ 379              		.loc 1 88 29 is_stmt 0 view .LVU72
+ 380 0012 606B     		ldr	r0, [r4, #52]
+ 381              	.LVL31:
+ 382              		.loc 1 88 44 view .LVU73
+ 383 0014 134E     		ldr	r6, .L34+12
+ 384 0016 3368     		ldr	r3, [r6]
+ 385 0018 C3EB0343 		rsb	r3, r3, r3, lsl #16
+ 386              		.loc 1 88 50 view .LVU74
+ 387 001c DFF84880 		ldr	r8, .L34+16
+ 388 0020 1844     		add	r0, r0, r3
+ 389 0022 C047     		blx	r8
+ 390              	.LVL32:
+ 391 0024 114F     		ldr	r7, .L34+20
+ 392 0026 3968     		ldr	r1, [r7]	@ float
+ 393 0028 114B     		ldr	r3, .L34+24
+ 394 002a 9847     		blx	r3
+ 395              	.LVL33:
+ 396              		.loc 1 88 14 view .LVU75
+ 397 002c 114D     		ldr	r5, .L34+28
+ 398 002e 2860     		str	r0, [r5]	@ float
+ 399              		.loc 1 89 2 is_stmt 1 view .LVU76
+ 400              		.loc 1 89 31 is_stmt 0 view .LVU77
+ 401 0030 606B     		ldr	r0, [r4, #52]
+ 402              		.loc 1 89 16 view .LVU78
+ 403 0032 C047     		blx	r8
+ 404              	.LVL34:
+ 405 0034 3860     		str	r0, [r7]	@ float
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 8
+
+
+ 406              		.loc 1 90 2 is_stmt 1 view .LVU79
+ 407              		.loc 1 90 10 is_stmt 0 view .LVU80
+ 408 0036 0023     		movs	r3, #0
+ 409 0038 3360     		str	r3, [r6]
+ 410              		.loc 1 91 2 is_stmt 1 view .LVU81
+ 411              		.loc 1 91 19 is_stmt 0 view .LVU82
+ 412 003a 2968     		ldr	r1, [r5]	@ float
+ 413 003c 0E48     		ldr	r0, .L34+32
+ 414 003e 0F4B     		ldr	r3, .L34+36
+ 415 0040 9847     		blx	r3
+ 416              	.LVL35:
+ 417 0042 0F4B     		ldr	r3, .L34+40
+ 418 0044 9847     		blx	r3
+ 419              	.LVL36:
+ 420              		.loc 1 91 32 view .LVU83
+ 421 0046 04A3     		adr	r3, .L34
+ 422 0048 D3E90023 		ldrd	r2, [r3]
+ 423 004c 0D4C     		ldr	r4, .L34+44
+ 424 004e A047     		blx	r4
+ 425              	.LVL37:
+ 426 0050 0D4B     		ldr	r3, .L34+48
+ 427 0052 9847     		blx	r3
+ 428              	.LVL38:
+ 429              		.loc 1 91 14 view .LVU84
+ 430 0054 2860     		str	r0, [r5]	@ float
+ 431 0056 DAE7     		b	.L30
+ 432              	.L35:
+ 433              		.align	3
+ 434              	.L34:
+ 435 0058 33333333 		.word	858993459
+ 436 005c 33330340 		.word	1073951539
+ 437 0060 00000000 		.word	htim1
+ 438 0064 00000000 		.word	.LANCHOR5
+ 439 0068 00000000 		.word	__aeabi_ui2f
+ 440 006c 00000000 		.word	.LANCHOR6
+ 441 0070 00000000 		.word	__aeabi_fsub
+ 442 0074 00000000 		.word	.LANCHOR7
+ 443 0078 00007A44 		.word	1148846080
+ 444 007c 00000000 		.word	__aeabi_fdiv
+ 445 0080 00000000 		.word	__aeabi_f2d
+ 446 0084 00000000 		.word	__aeabi_dmul
+ 447 0088 00000000 		.word	__aeabi_d2f
+ 448              		.cfi_endproc
+ 449              	.LFE72:
+ 451              		.section	.rodata.temp_init.str1.4,"aMS",%progbits,1
+ 452              		.align	2
+ 453              	.LC0:
+ 454 0000 74656D70 		.ascii	"temp task\000"
+ 454      20746173 
+ 454      6B00
+ 455              		.section	.text.temp_init,"ax",%progbits
+ 456              		.align	1
+ 457              		.global	temp_init
+ 458              		.syntax unified
+ 459              		.thumb
+ 460              		.thumb_func
+ 461              		.fpu softvfp
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 9
+
+
+ 463              	temp_init:
+ 464              	.LFB73:
+ 465              		.loc 1 94 17 is_stmt 1 view -0
+ 466              		.cfi_startproc
+ 467              		@ args = 0, pretend = 0, frame = 0
+ 468              		@ frame_needed = 0, uses_anonymous_args = 0
+ 469 0000 10B5     		push	{r4, lr}
+ 470              	.LCFI6:
+ 471              		.cfi_def_cfa_offset 8
+ 472              		.cfi_offset 4, -8
+ 473              		.cfi_offset 14, -4
+ 474 0002 82B0     		sub	sp, sp, #8
+ 475              	.LCFI7:
+ 476              		.cfi_def_cfa_offset 16
+ 477              		.loc 1 95 2 view .LVU86
+ 478 0004 094C     		ldr	r4, .L38
+ 479 0006 2046     		mov	r0, r4
+ 480 0008 094B     		ldr	r3, .L38+4
+ 481 000a 9847     		blx	r3
+ 482              	.LVL39:
+ 483              		.loc 1 96 2 view .LVU87
+ 484 000c 0021     		movs	r1, #0
+ 485 000e 2046     		mov	r0, r4
+ 486 0010 084B     		ldr	r3, .L38+8
+ 487 0012 9847     		blx	r3
+ 488              	.LVL40:
+ 489              		.loc 1 98 2 view .LVU88
+ 490 0014 084B     		ldr	r3, .L38+12
+ 491 0016 0193     		str	r3, [sp, #4]
+ 492 0018 0223     		movs	r3, #2
+ 493 001a 0093     		str	r3, [sp]
+ 494 001c 0023     		movs	r3, #0
+ 495 001e 8022     		movs	r2, #128
+ 496 0020 0649     		ldr	r1, .L38+16
+ 497 0022 0748     		ldr	r0, .L38+20
+ 498 0024 074C     		ldr	r4, .L38+24
+ 499 0026 A047     		blx	r4
+ 500              	.LVL41:
+ 501              		.loc 1 99 1 is_stmt 0 view .LVU89
+ 502 0028 02B0     		add	sp, sp, #8
+ 503              	.LCFI8:
+ 504              		.cfi_def_cfa_offset 8
+ 505              		@ sp needed
+ 506 002a 10BD     		pop	{r4, pc}
+ 507              	.L39:
+ 508              		.align	2
+ 509              	.L38:
+ 510 002c 00000000 		.word	htim1
+ 511 0030 00000000 		.word	HAL_TIM_Base_Start_IT
+ 512 0034 00000000 		.word	HAL_TIM_IC_Start_IT
+ 513 0038 00000000 		.word	.LANCHOR4
+ 514 003c 00000000 		.word	.LC0
+ 515 0040 00000000 		.word	temp_task
+ 516 0044 00000000 		.word	xTaskCreate
+ 517              		.cfi_endproc
+ 518              	.LFE73:
+ 520              		.global	overflow
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 10
+
+
+ 521              		.global	previousBrzina
+ 522              		.global	brzinaSensor
+ 523              		.global	windvaneSensor
+ 524              		.global	tempSensor
+ 525              		.section	.bss.brzinaSensor,"aw",%nobits
+ 526              		.align	2
+ 527              		.set	.LANCHOR7,. + 0
+ 530              	brzinaSensor:
+ 531 0000 00000000 		.space	4
+ 532              		.section	.bss.overflow,"aw",%nobits
+ 533              		.align	2
+ 534              		.set	.LANCHOR5,. + 0
+ 537              	overflow:
+ 538 0000 00000000 		.space	4
+ 539              		.section	.bss.previousBrzina,"aw",%nobits
+ 540              		.align	2
+ 541              		.set	.LANCHOR6,. + 0
+ 544              	previousBrzina:
+ 545 0000 00000000 		.space	4
+ 546              		.section	.bss.task,"aw",%nobits
+ 547              		.align	2
+ 548              		.set	.LANCHOR4,. + 0
+ 551              	task:
+ 552 0000 00000000 		.space	4
+ 553              		.section	.bss.tempSensor,"aw",%nobits
+ 554              		.align	2
+ 555              		.set	.LANCHOR2,. + 0
+ 558              	tempSensor:
+ 559 0000 00000000 		.space	4
+ 560              		.section	.bss.windvaneSensor,"aw",%nobits
+ 561              		.align	2
+ 562              		.set	.LANCHOR3,. + 0
+ 565              	windvaneSensor:
+ 566 0000 00000000 		.space	4
+ 567              		.section	.rodata.voltageThresholds,"a"
+ 568              		.align	2
+ 569              		.set	.LANCHOR0,. + 0
+ 572              	voltageThresholds:
+ 573 0000 E0BE063F 		.word	1057406688
+ 574 0004 1748503F 		.word	1062225943
+ 575 0008 20D2873F 		.word	1065865760
+ 576 000c 58CAAE3F 		.word	1068419672
+ 577 0010 7671DF3F 		.word	1071608182
+ 578 0014 30BBFF3F 		.word	1073724208
+ 579 0018 CD3B1A40 		.word	1075461069
+ 580 001c 25753840 		.word	1077441829
+ 581 0020 87A75340 		.word	1079224199
+ 582 0024 8CDB6C40 		.word	1080875916
+ 583 0028 32E67C40 		.word	1081927218
+ 584 002c 4FAF8740 		.word	1082634063
+ 585 0030 A1D68E40 		.word	1083102881
+ 586 0034 772D9240 		.word	1083321719
+ 587 0038 014D9440 		.word	1083460865
+ 588 003c 0000A040 		.word	1084227584
+ 589              		.section	.rodata.windBearings,"a"
+ 590              		.align	2
+ 591              		.set	.LANCHOR1,. + 0
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 11
+
+
+ 594              	windBearings:
+ 595 0000 00008743 		.word	1132920832
+ 596 0004 00809D43 		.word	1134395392
+ 597 0008 00409243 		.word	1133658112
+ 598 000c 00000000 		.word	0
+ 599 0010 00C0A843 		.word	1135132672
+ 600 0014 00006143 		.word	1130430464
+ 601 0018 00807743 		.word	1131905024
+ 602 001c 00003442 		.word	1110704128
+ 603 0020 0000B441 		.word	1102315520
+ 604 0024 00003443 		.word	1127481344
+ 605 0028 00804A43 		.word	1128955904
+ 606 002c 00000743 		.word	1124532224
+ 607 0030 00801D43 		.word	1126006784
+ 608 0034 0000B442 		.word	1119092736
+ 609 0038 00008742 		.word	1116143616
+ 610 003c 0000E142 		.word	1122041856
+ 611              		.text
+ 612              	.Letext0:
+ 613              		.file 2 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 614              		.file 3 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 615              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 616              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 617              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 618              		.file 7 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 619              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 620              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 621              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 622              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h"
+ 623              		.file 12 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 624              		.file 13 "../Core/Inc/adc.h"
+ 625              		.file 14 "../Core/Inc/tim.h"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 driver_temp.c
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:17     .text.voltage2WindBearing:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:24     .text.voltage2WindBearing:0000000000000000 voltage2WindBearing
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:87     .text.voltage2WindBearing:0000000000000028 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:97     .text.temp_task:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:103    .text.temp_task:0000000000000000 temp_task
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:234    .text.temp_task:0000000000000098 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:252    .text.HAL_ADC_ConvCpltCallback:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:259    .text.HAL_ADC_ConvCpltCallback:0000000000000000 HAL_ADC_ConvCpltCallback
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:327    .text.HAL_ADC_ConvCpltCallback:000000000000003c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:339    .text.HAL_TIM_IC_CaptureCallback:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:346    .text.HAL_TIM_IC_CaptureCallback:0000000000000000 HAL_TIM_IC_CaptureCallback
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:435    .text.HAL_TIM_IC_CaptureCallback:0000000000000058 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:452    .rodata.temp_init.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:456    .text.temp_init:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:463    .text.temp_init:0000000000000000 temp_init
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:510    .text.temp_init:000000000000002c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:537    .bss.overflow:0000000000000000 overflow
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:544    .bss.previousBrzina:0000000000000000 previousBrzina
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:530    .bss.brzinaSensor:0000000000000000 brzinaSensor
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:565    .bss.windvaneSensor:0000000000000000 windvaneSensor
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:558    .bss.tempSensor:0000000000000000 tempSensor
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:526    .bss.brzinaSensor:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:533    .bss.overflow:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:540    .bss.previousBrzina:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:547    .bss.task:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:551    .bss.task:0000000000000000 task
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:554    .bss.tempSensor:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:561    .bss.windvaneSensor:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:568    .rodata.voltageThresholds:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:572    .rodata.voltageThresholds:0000000000000000 voltageThresholds
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:590    .rodata.windBearings:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccgsjwYl.s:594    .rodata.windBearings:0000000000000000 windBearings
+
+UNDEFINED SYMBOLS
+__aeabi_fcmpgt
+__aeabi_ui2f
+__aeabi_fmul
+HAL_GPIO_WritePin
+hadc1
+HAL_ADC_Start_IT
+ulTaskNotifyTake
+HAL_ADC_GetValue
+vTaskDelay
+vTaskNotifyGiveFromISR
+__aeabi_fsub
+__aeabi_fdiv
+__aeabi_f2d
+__aeabi_dmul
+__aeabi_d2f
+htim1
+HAL_TIM_Base_Start_IT
+HAL_TIM_IC_Start_IT
+xTaskCreate

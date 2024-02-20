@@ -1,0 +1,272 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f1xx_hal_timebase_tim.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.HAL_InitTick,"ax",%progbits
+  16              		.align	1
+  17              		.global	HAL_InitTick
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	HAL_InitTick:
+  25              	.LVL0:
+  26              	.LFB65:
+  27              		.file 1 "../Core/Src/stm32f1xx_hal_timebase_tim.c"
+   1:../Core/Src/stm32f1xx_hal_timebase_tim.c **** 
+  28              		.loc 1 43 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 32
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 43 1 is_stmt 0 view .LVU1
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 89B0     		sub	sp, sp, #36
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 40
+  40 0004 0146     		mov	r1, r0
+  41              		.loc 1 44 3 is_stmt 1 view .LVU2
+  42              		.loc 1 45 3 view .LVU3
+  43              	.LVL1:
+  44              		.loc 1 46 3 view .LVU4
+  45              		.loc 1 47 3 view .LVU5
+  46              		.loc 1 49 3 view .LVU6
+  47 0006 0022     		movs	r2, #0
+  48 0008 1C20     		movs	r0, #28
+  49              	.LVL2:
+  50              		.loc 1 49 3 is_stmt 0 view .LVU7
+  51 000a 184B     		ldr	r3, .L6
+  52 000c 9847     		blx	r3
+  53              	.LVL3:
+  54              		.loc 1 52 3 is_stmt 1 view .LVU8
+  55 000e 1C20     		movs	r0, #28
+  56 0010 174B     		ldr	r3, .L6+4
+  57 0012 9847     		blx	r3
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s 			page 2
+
+
+  58              	.LVL4:
+  59              		.loc 1 55 3 view .LVU9
+  60              	.LBB2:
+  61              		.loc 1 55 3 view .LVU10
+  62              		.loc 1 55 3 view .LVU11
+  63 0014 174B     		ldr	r3, .L6+8
+  64 0016 DA69     		ldr	r2, [r3, #28]
+  65 0018 42F00102 		orr	r2, r2, #1
+  66 001c DA61     		str	r2, [r3, #28]
+  67              		.loc 1 55 3 view .LVU12
+  68 001e DB69     		ldr	r3, [r3, #28]
+  69 0020 03F00103 		and	r3, r3, #1
+  70 0024 0193     		str	r3, [sp, #4]
+  71              		.loc 1 55 3 view .LVU13
+  72 0026 019B     		ldr	r3, [sp, #4]
+  73              	.LBE2:
+  74              		.loc 1 55 3 view .LVU14
+  75              		.loc 1 58 3 view .LVU15
+  76 0028 02A9     		add	r1, sp, #8
+  77 002a 03A8     		add	r0, sp, #12
+  78 002c 124B     		ldr	r3, .L6+12
+  79 002e 9847     		blx	r3
+  80              	.LVL5:
+  81              		.loc 1 61 3 view .LVU16
+  82              		.loc 1 61 16 is_stmt 0 view .LVU17
+  83 0030 124B     		ldr	r3, .L6+16
+  84 0032 9847     		blx	r3
+  85              	.LVL6:
+  86              		.loc 1 63 3 is_stmt 1 view .LVU18
+  87              		.loc 1 63 46 is_stmt 0 view .LVU19
+  88 0034 124B     		ldr	r3, .L6+20
+  89 0036 A3FB0023 		umull	r2, r3, r3, r0
+  90 003a 9B0C     		lsrs	r3, r3, #18
+  91              		.loc 1 63 20 view .LVU20
+  92 003c 013B     		subs	r3, r3, #1
+  93              	.LVL7:
+  94              		.loc 1 66 3 is_stmt 1 view .LVU21
+  95              		.loc 1 66 18 is_stmt 0 view .LVU22
+  96 003e 1148     		ldr	r0, .L6+24
+  97              	.LVL8:
+  98              		.loc 1 66 18 view .LVU23
+  99 0040 4FF08042 		mov	r2, #1073741824
+ 100 0044 0260     		str	r2, [r0]
+ 101              		.loc 1 74 3 is_stmt 1 view .LVU24
+ 102              		.loc 1 74 21 is_stmt 0 view .LVU25
+ 103 0046 40F2E732 		movw	r2, #999
+ 104 004a C260     		str	r2, [r0, #12]
+ 105              		.loc 1 75 3 is_stmt 1 view .LVU26
+ 106              		.loc 1 75 24 is_stmt 0 view .LVU27
+ 107 004c 4360     		str	r3, [r0, #4]
+ 108              		.loc 1 76 3 is_stmt 1 view .LVU28
+ 109              		.loc 1 76 28 is_stmt 0 view .LVU29
+ 110 004e 0023     		movs	r3, #0
+ 111              	.LVL9:
+ 112              		.loc 1 76 28 view .LVU30
+ 113 0050 0361     		str	r3, [r0, #16]
+ 114              		.loc 1 77 3 is_stmt 1 view .LVU31
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s 			page 3
+
+
+ 115              		.loc 1 77 26 is_stmt 0 view .LVU32
+ 116 0052 8360     		str	r3, [r0, #8]
+ 117              		.loc 1 79 3 is_stmt 1 view .LVU33
+ 118              		.loc 1 79 6 is_stmt 0 view .LVU34
+ 119 0054 0C4B     		ldr	r3, .L6+28
+ 120 0056 9847     		blx	r3
+ 121              	.LVL10:
+ 122              		.loc 1 79 5 view .LVU35
+ 123 0058 18B1     		cbz	r0, .L5
+ 124              		.loc 1 86 10 view .LVU36
+ 125 005a 0120     		movs	r0, #1
+ 126              	.L2:
+ 127              		.loc 1 87 1 view .LVU37
+ 128 005c 09B0     		add	sp, sp, #36
+ 129              	.LCFI2:
+ 130              		.cfi_remember_state
+ 131              		.cfi_def_cfa_offset 4
+ 132              		@ sp needed
+ 133 005e 5DF804FB 		ldr	pc, [sp], #4
+ 134              	.L5:
+ 135              	.LCFI3:
+ 136              		.cfi_restore_state
+ 137              		.loc 1 82 5 is_stmt 1 view .LVU38
+ 138              		.loc 1 82 12 is_stmt 0 view .LVU39
+ 139 0062 0848     		ldr	r0, .L6+24
+ 140 0064 094B     		ldr	r3, .L6+32
+ 141 0066 9847     		blx	r3
+ 142              	.LVL11:
+ 143 0068 F8E7     		b	.L2
+ 144              	.L7:
+ 145 006a 00BF     		.align	2
+ 146              	.L6:
+ 147 006c 00000000 		.word	HAL_NVIC_SetPriority
+ 148 0070 00000000 		.word	HAL_NVIC_EnableIRQ
+ 149 0074 00100240 		.word	1073876992
+ 150 0078 00000000 		.word	HAL_RCC_GetClockConfig
+ 151 007c 00000000 		.word	HAL_RCC_GetPCLK1Freq
+ 152 0080 83DE1B43 		.word	1125899907
+ 153 0084 00000000 		.word	.LANCHOR0
+ 154 0088 00000000 		.word	HAL_TIM_Base_Init
+ 155 008c 00000000 		.word	HAL_TIM_Base_Start_IT
+ 156              		.cfi_endproc
+ 157              	.LFE65:
+ 159              		.section	.text.HAL_SuspendTick,"ax",%progbits
+ 160              		.align	1
+ 161              		.global	HAL_SuspendTick
+ 162              		.syntax unified
+ 163              		.thumb
+ 164              		.thumb_func
+ 165              		.fpu softvfp
+ 167              	HAL_SuspendTick:
+ 168              	.LFB66:
+ 169              		.loc 1 96 1 is_stmt 1 view -0
+ 170              		.cfi_startproc
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173              		@ link register save eliminated.
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s 			page 4
+
+
+ 174              		.loc 1 98 3 view .LVU41
+ 175 0000 034B     		ldr	r3, .L9
+ 176 0002 1A68     		ldr	r2, [r3]
+ 177 0004 D368     		ldr	r3, [r2, #12]
+ 178 0006 23F00103 		bic	r3, r3, #1
+ 179 000a D360     		str	r3, [r2, #12]
+ 180              		.loc 1 99 1 is_stmt 0 view .LVU42
+ 181 000c 7047     		bx	lr
+ 182              	.L10:
+ 183 000e 00BF     		.align	2
+ 184              	.L9:
+ 185 0010 00000000 		.word	.LANCHOR0
+ 186              		.cfi_endproc
+ 187              	.LFE66:
+ 189              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 190              		.align	1
+ 191              		.global	HAL_ResumeTick
+ 192              		.syntax unified
+ 193              		.thumb
+ 194              		.thumb_func
+ 195              		.fpu softvfp
+ 197              	HAL_ResumeTick:
+ 198              	.LFB67:
+ 199              		.loc 1 108 1 is_stmt 1 view -0
+ 200              		.cfi_startproc
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203              		@ link register save eliminated.
+ 204              		.loc 1 110 3 view .LVU44
+ 205 0000 034B     		ldr	r3, .L12
+ 206 0002 1A68     		ldr	r2, [r3]
+ 207 0004 D368     		ldr	r3, [r2, #12]
+ 208 0006 43F00103 		orr	r3, r3, #1
+ 209 000a D360     		str	r3, [r2, #12]
+ 210              		.loc 1 111 1 is_stmt 0 view .LVU45
+ 211 000c 7047     		bx	lr
+ 212              	.L13:
+ 213 000e 00BF     		.align	2
+ 214              	.L12:
+ 215 0010 00000000 		.word	.LANCHOR0
+ 216              		.cfi_endproc
+ 217              	.LFE67:
+ 219              		.global	htim2
+ 220              		.section	.bss.htim2,"aw",%nobits
+ 221              		.align	2
+ 222              		.set	.LANCHOR0,. + 0
+ 225              	htim2:
+ 226 0000 00000000 		.space	72
+ 226      00000000 
+ 226      00000000 
+ 226      00000000 
+ 226      00000000 
+ 227              		.text
+ 228              	.Letext0:
+ 229              		.file 2 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 230              		.file 3 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 231              		.file 4 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s 			page 5
+
+
+ 232              		.file 5 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 233              		.file 6 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 234              		.file 7 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 235              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 236              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_timebase_tim.c
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:16     .text.HAL_InitTick:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:24     .text.HAL_InitTick:0000000000000000 HAL_InitTick
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:147    .text.HAL_InitTick:000000000000006c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:160    .text.HAL_SuspendTick:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:167    .text.HAL_SuspendTick:0000000000000000 HAL_SuspendTick
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:185    .text.HAL_SuspendTick:0000000000000010 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:190    .text.HAL_ResumeTick:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:197    .text.HAL_ResumeTick:0000000000000000 HAL_ResumeTick
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:215    .text.HAL_ResumeTick:0000000000000010 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:225    .bss.htim2:0000000000000000 htim2
+C:\Users\Korisnik\AppData\Local\Temp\ccV4KBZb.s:221    .bss.htim2:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_RCC_GetClockConfig
+HAL_RCC_GetPCLK1Freq
+HAL_TIM_Base_Init
+HAL_TIM_Base_Start_IT

@@ -1,0 +1,343 @@
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"driver_uart.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.UART_TransmitTask,"ax",%progbits
+  16              		.align	1
+  17              		.arch armv7-m
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	UART_TransmitTask:
+  24              	.LFB69:
+  25              		.file 1 "../Core/Src/driver_uart.c"
+   1:../Core/Src/driver_uart.c **** 
+  26              		.loc 1 27 1 view -0
+  27              		.cfi_startproc
+  28              		@ Volatile: function does not return.
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32              		.loc 1 27 1 is_stmt 0 view .LVU1
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 83B0     		sub	sp, sp, #12
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 16
+  40              	.LVL1:
+  41              	.L2:
+  42              		.loc 1 28 2 is_stmt 1 discriminator 1 view .LVU2
+  43              		.loc 1 29 2 discriminator 1 view .LVU3
+  44              		.loc 1 30 3 discriminator 1 view .LVU4
+  45 0004 4FF0FF32 		mov	r2, #-1
+  46 0008 0DF10701 		add	r1, sp, #7
+  47 000c 074B     		ldr	r3, .L4
+  48 000e 1868     		ldr	r0, [r3]
+  49 0010 074B     		ldr	r3, .L4+4
+  50 0012 9847     		blx	r3
+  51              	.LVL2:
+  52              		.loc 1 31 3 discriminator 1 view .LVU5
+  53 0014 0122     		movs	r2, #1
+  54 0016 0DF10701 		add	r1, sp, #7
+  55 001a 0648     		ldr	r0, .L4+8
+  56 001c 064B     		ldr	r3, .L4+12
+  57 001e 9847     		blx	r3
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s 			page 2
+
+
+  58              	.LVL3:
+  59              		.loc 1 32 3 discriminator 1 view .LVU6
+  60 0020 4FF0FF31 		mov	r1, #-1
+  61 0024 0120     		movs	r0, #1
+  62 0026 054B     		ldr	r3, .L4+16
+  63 0028 9847     		blx	r3
+  64              	.LVL4:
+  65              		.loc 1 29 7 discriminator 1 view .LVU7
+  66 002a EBE7     		b	.L2
+  67              	.L5:
+  68              		.align	2
+  69              	.L4:
+  70 002c 00000000 		.word	.LANCHOR0
+  71 0030 00000000 		.word	xQueueReceive
+  72 0034 00000000 		.word	huart1
+  73 0038 00000000 		.word	HAL_UART_Transmit_IT
+  74 003c 00000000 		.word	ulTaskNotifyTake
+  75              		.cfi_endproc
+  76              	.LFE69:
+  78              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+  79              		.align	1
+  80              		.global	HAL_UART_TxCpltCallback
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  84              		.fpu softvfp
+  86              	HAL_UART_TxCpltCallback:
+  87              	.LVL5:
+  88              	.LFB70:
+  89              		.loc 1 37 1 view -0
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 8
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		.loc 1 38 2 view .LVU9
+  94              		.loc 1 38 10 is_stmt 0 view .LVU10
+  95 0000 0268     		ldr	r2, [r0]
+  96              		.loc 1 38 28 view .LVU11
+  97 0002 0E4B     		ldr	r3, .L15
+  98 0004 1B68     		ldr	r3, [r3]
+  99              		.loc 1 38 4 view .LVU12
+ 100 0006 9A42     		cmp	r2, r3
+ 101 0008 00D0     		beq	.L14
+ 102 000a 7047     		bx	lr
+ 103              	.L14:
+ 104              		.loc 1 37 1 view .LVU13
+ 105 000c 00B5     		push	{lr}
+ 106              	.LCFI2:
+ 107              		.cfi_def_cfa_offset 4
+ 108              		.cfi_offset 14, -4
+ 109 000e 83B0     		sub	sp, sp, #12
+ 110              	.LCFI3:
+ 111              		.cfi_def_cfa_offset 16
+ 112              		.loc 1 39 2 is_stmt 1 view .LVU14
+ 113              		.loc 1 39 13 is_stmt 0 view .LVU15
+ 114 0010 0023     		movs	r3, #0
+ 115 0012 0193     		str	r3, [sp, #4]
+ 116              		.loc 1 40 2 is_stmt 1 view .LVU16
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s 			page 3
+
+
+ 117 0014 01A9     		add	r1, sp, #4
+ 118 0016 0A4B     		ldr	r3, .L15+4
+ 119 0018 1868     		ldr	r0, [r3]
+ 120              	.LVL6:
+ 121              		.loc 1 40 2 is_stmt 0 view .LVU17
+ 122 001a 0A4B     		ldr	r3, .L15+8
+ 123 001c 9847     		blx	r3
+ 124              	.LVL7:
+ 125              		.loc 1 41 2 is_stmt 1 view .LVU18
+ 126 001e 019B     		ldr	r3, [sp, #4]
+ 127 0020 4BB1     		cbz	r3, .L6
+ 128              		.loc 1 41 2 discriminator 1 view .LVU19
+ 129 0022 4FF0E023 		mov	r3, #-536813568
+ 130 0026 4FF08052 		mov	r2, #268435456
+ 131 002a C3F8042D 		str	r2, [r3, #3332]
+ 132              		.loc 1 41 2 discriminator 1 view .LVU20
+ 133              		.syntax unified
+ 134              	@ 41 "Core/Src/driver_uart.c" 1
+ 135 002e BFF34F8F 		dsb
+ 136              	@ 0 "" 2
+ 137              		.loc 1 41 2 discriminator 1 view .LVU21
+ 138              	@ 41 "Core/Src/driver_uart.c" 1
+ 139 0032 BFF36F8F 		isb
+ 140              	@ 0 "" 2
+ 141              		.loc 1 41 27 discriminator 1 view .LVU22
+ 142              		.thumb
+ 143              		.syntax unified
+ 144              	.L6:
+ 145              		.loc 1 42 1 is_stmt 0 view .LVU23
+ 146 0036 03B0     		add	sp, sp, #12
+ 147              	.LCFI4:
+ 148              		.cfi_def_cfa_offset 4
+ 149              		@ sp needed
+ 150 0038 5DF804FB 		ldr	pc, [sp], #4
+ 151              	.L16:
+ 152              		.align	2
+ 153              	.L15:
+ 154 003c 00000000 		.word	huart1
+ 155 0040 00000000 		.word	.LANCHOR1
+ 156 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 157              		.cfi_endproc
+ 158              	.LFE70:
+ 160              		.section	.rodata.UART_Init.str1.4,"aMS",%progbits,1
+ 161              		.align	2
+ 162              	.LC0:
+ 163 0000 75617274 		.ascii	"uart task\000"
+ 163      20746173 
+ 163      6B00
+ 164              		.section	.text.UART_Init,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	UART_Init
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.fpu softvfp
+ 172              	UART_Init:
+ 173              	.LFB71:
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s 			page 4
+
+
+ 174              		.loc 1 47 1 is_stmt 1 view -0
+ 175              		.cfi_startproc
+ 176              		@ args = 0, pretend = 0, frame = 0
+ 177              		@ frame_needed = 0, uses_anonymous_args = 0
+ 178 0000 10B5     		push	{r4, lr}
+ 179              	.LCFI5:
+ 180              		.cfi_def_cfa_offset 8
+ 181              		.cfi_offset 4, -8
+ 182              		.cfi_offset 14, -4
+ 183 0002 82B0     		sub	sp, sp, #8
+ 184              	.LCFI6:
+ 185              		.cfi_def_cfa_offset 16
+ 186              		.loc 1 48 2 view .LVU25
+ 187              		.loc 1 48 27 is_stmt 0 view .LVU26
+ 188 0004 0022     		movs	r2, #0
+ 189 0006 0121     		movs	r1, #1
+ 190 0008 4020     		movs	r0, #64
+ 191 000a 084B     		ldr	r3, .L19
+ 192 000c 9847     		blx	r3
+ 193              	.LVL8:
+ 194              		.loc 1 48 26 view .LVU27
+ 195 000e 084B     		ldr	r3, .L19+4
+ 196 0010 1860     		str	r0, [r3]
+ 197              		.loc 1 49 2 is_stmt 1 view .LVU28
+ 198 0012 084B     		ldr	r3, .L19+8
+ 199 0014 0193     		str	r3, [sp, #4]
+ 200 0016 0423     		movs	r3, #4
+ 201 0018 0093     		str	r3, [sp]
+ 202 001a 0023     		movs	r3, #0
+ 203 001c 8022     		movs	r2, #128
+ 204 001e 0649     		ldr	r1, .L19+12
+ 205 0020 0648     		ldr	r0, .L19+16
+ 206 0022 074C     		ldr	r4, .L19+20
+ 207 0024 A047     		blx	r4
+ 208              	.LVL9:
+ 209              		.loc 1 50 1 is_stmt 0 view .LVU29
+ 210 0026 02B0     		add	sp, sp, #8
+ 211              	.LCFI7:
+ 212              		.cfi_def_cfa_offset 8
+ 213              		@ sp needed
+ 214 0028 10BD     		pop	{r4, pc}
+ 215              	.L20:
+ 216 002a 00BF     		.align	2
+ 217              	.L19:
+ 218 002c 00000000 		.word	xQueueGenericCreate
+ 219 0030 00000000 		.word	.LANCHOR0
+ 220 0034 00000000 		.word	.LANCHOR1
+ 221 0038 00000000 		.word	.LC0
+ 222 003c 00000000 		.word	UART_TransmitTask
+ 223 0040 00000000 		.word	xTaskCreate
+ 224              		.cfi_endproc
+ 225              	.LFE71:
+ 227              		.section	.text.UART_AsyncTransmitCharacter,"ax",%progbits
+ 228              		.align	1
+ 229              		.global	UART_AsyncTransmitCharacter
+ 230              		.syntax unified
+ 231              		.thumb
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s 			page 5
+
+
+ 232              		.thumb_func
+ 233              		.fpu softvfp
+ 235              	UART_AsyncTransmitCharacter:
+ 236              	.LVL10:
+ 237              	.LFB72:
+ 238              		.loc 1 56 1 is_stmt 1 view -0
+ 239              		.cfi_startproc
+ 240              		@ args = 0, pretend = 0, frame = 8
+ 241              		@ frame_needed = 0, uses_anonymous_args = 0
+ 242              		.loc 1 56 1 is_stmt 0 view .LVU31
+ 243 0000 10B5     		push	{r4, lr}
+ 244              	.LCFI8:
+ 245              		.cfi_def_cfa_offset 8
+ 246              		.cfi_offset 4, -8
+ 247              		.cfi_offset 14, -4
+ 248 0002 82B0     		sub	sp, sp, #8
+ 249              	.LCFI9:
+ 250              		.cfi_def_cfa_offset 16
+ 251 0004 8DF80700 		strb	r0, [sp, #7]
+ 252              		.loc 1 57 2 is_stmt 1 view .LVU32
+ 253 0008 0023     		movs	r3, #0
+ 254 000a 4FF0FF32 		mov	r2, #-1
+ 255 000e 0DF10701 		add	r1, sp, #7
+ 256 0012 0348     		ldr	r0, .L23
+ 257              	.LVL11:
+ 258              		.loc 1 57 2 is_stmt 0 view .LVU33
+ 259 0014 0068     		ldr	r0, [r0]
+ 260 0016 034C     		ldr	r4, .L23+4
+ 261 0018 A047     		blx	r4
+ 262              	.LVL12:
+ 263              		.loc 1 58 1 view .LVU34
+ 264 001a 02B0     		add	sp, sp, #8
+ 265              	.LCFI10:
+ 266              		.cfi_def_cfa_offset 8
+ 267              		@ sp needed
+ 268 001c 10BD     		pop	{r4, pc}
+ 269              	.L24:
+ 270 001e 00BF     		.align	2
+ 271              	.L23:
+ 272 0020 00000000 		.word	.LANCHOR0
+ 273 0024 00000000 		.word	xQueueGenericSend
+ 274              		.cfi_endproc
+ 275              	.LFE72:
+ 277              		.section	.bss.UART_TransmitQueueHandle,"aw",%nobits
+ 278              		.align	2
+ 279              		.set	.LANCHOR0,. + 0
+ 282              	UART_TransmitQueueHandle:
+ 283 0000 00000000 		.space	4
+ 284              		.section	.bss.UART_TransmitTaskHandle,"aw",%nobits
+ 285              		.align	2
+ 286              		.set	.LANCHOR1,. + 0
+ 289              	UART_TransmitTaskHandle:
+ 290 0000 00000000 		.space	4
+ 291              		.text
+ 292              	.Letext0:
+ 293              		.file 2 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ 294              		.file 3 "../c:\\users\\korisnik\\desktop\\gnu mcu\\arm-none-eabi-gcc-10.2.1-1.1\\arm-none-eabi\\in
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s 			page 6
+
+
+ 295              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 296              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 297              		.file 6 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 298              		.file 7 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 299              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 300              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 301              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 302              		.file 11 "../Core/Inc/usart.h"
+ARM GAS  C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 driver_uart.c
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:16     .text.UART_TransmitTask:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:23     .text.UART_TransmitTask:0000000000000000 UART_TransmitTask
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:70     .text.UART_TransmitTask:000000000000002c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:79     .text.HAL_UART_TxCpltCallback:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:86     .text.HAL_UART_TxCpltCallback:0000000000000000 HAL_UART_TxCpltCallback
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:154    .text.HAL_UART_TxCpltCallback:000000000000003c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:161    .rodata.UART_Init.str1.4:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:165    .text.UART_Init:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:172    .text.UART_Init:0000000000000000 UART_Init
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:218    .text.UART_Init:000000000000002c $d
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:228    .text.UART_AsyncTransmitCharacter:0000000000000000 $t
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:235    .text.UART_AsyncTransmitCharacter:0000000000000000 UART_AsyncTransmitCharacter
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:272    .text.UART_AsyncTransmitCharacter:0000000000000020 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:278    .bss.UART_TransmitQueueHandle:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:282    .bss.UART_TransmitQueueHandle:0000000000000000 UART_TransmitQueueHandle
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:285    .bss.UART_TransmitTaskHandle:0000000000000000 $d
+C:\Users\Korisnik\AppData\Local\Temp\ccmlonLF.s:289    .bss.UART_TransmitTaskHandle:0000000000000000 UART_TransmitTaskHandle
+
+UNDEFINED SYMBOLS
+xQueueReceive
+huart1
+HAL_UART_Transmit_IT
+ulTaskNotifyTake
+vTaskNotifyGiveFromISR
+xQueueGenericCreate
+xTaskCreate
+xQueueGenericSend
